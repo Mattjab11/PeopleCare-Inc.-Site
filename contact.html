@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PeopleCare, Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <style>
+        .content-section { max-width: 1200px; margin: 8rem auto; padding: 0 3rem; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-info { background: var(--white); padding: 4rem; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary); margin-bottom: 3rem; font-weight: 900; }
+        .contact-detail { margin-bottom: 3rem; padding: 1.5rem; background: var(--cream); border-radius: 15px; transition: all 0.3s ease; }
+        .contact-detail:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .contact-detail h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 1rem; font-weight: 700; }
+        .contact-detail p { color: var(--text-light); line-height: 1.8; font-size: 1.1rem; }
+        .contact-detail a { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.2rem; }
+        .contact-detail a:hover { color: var(--accent); }
+        .cta-box { background: linear-gradient(135deg, var(--cream), #FFF8E7); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--accent); box-shadow: 0 15px 50px rgba(0,0,0,0.08); }
+        .cta-box h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--primary); margin-bottom: 2rem; font-weight: 900; }
+        .cta-box p { color: var(--text); font-size: 1.2rem; line-height: 2; margin-bottom: 1.5rem; }
+        .btn-large { display: inline-block; background: linear-gradient(135deg, var(--accent), var(--accent-light)); color: var(--white); padding: 1.5rem 3.5rem; border-radius: 60px; text-decoration: none; font-weight: 700; font-size: 1.3rem; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(231, 111, 81, 0.3); margin-top: 1rem; }
+        .btn-large:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(231, 111, 81, 0.4); }
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">PeopleCare</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Contact Us</h1>
+        <p>We're Here to Help</p>
+    </section>
+
+    <section class="content-section">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                
+                <div class="contact-detail">
+                    <h3>Phone</h3>
+                    <p><a href="tel:7084421223">(708) 442-1223</a></p>
+                </div>
+
+                <div class="contact-detail">
+                    <h3>Address</h3>
+                    <p>
+                        PeopleCare, Inc.<br>
+                        273 Nuttall Road<br>
+                        Riverside, IL 60546
+                    </p>
+                </div>
+
+                <div class="contact-detail">
+                    <h3>Office Hours</h3>
+                    <p>
+                        Monday - Friday<br>
+                        9:00 AM - 5:00 PM
+                    </p>
+                </div>
+
+                <div class="contact-detail">
+                    <h3>Service Area</h3>
+                    <p>We serve the communities of Brookfield, LaGrange, LaGrange Park, Lyons, North Riverside, Riverside, and Westchester.</p>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h2>One Call Can Make All the Difference</h2>
+                <p>What can one hour mean? To a PeopleCare client it can mean a doctor's appointment on time, a filled prescription, or three hotels on boardwalk. To a PeopleCare volunteer it's seeing the amazing difference their time can make.</p>
+                <p>Every hour is precious. At PeopleCare we think that's the most important lesson of all.</p>
+                <p><strong>To learn more, volunteer or request assistance, please call us.</strong></p>
+                <a href="tel:7084421223" class="btn-large">(708) 442-1223</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PeopleCare, Inc.</h3>
+                <p>273 Nuttall Road<br>Riverside, IL 60546</p>
+                <p>Phone: (708) 442-1223</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="get-help.html">Get Help</a>
+                <a href="get-involved.html">Volunteer</a>
+                <a href="donations.html">Donate</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <a href="get-help.html">Friendly Visitors</a>
+                <a href="get-help.html">Transportation</a>
+                <a href="get-help.html">Caregiver Support</a>
+                <a href="get-help.html">Information & Referral</a>
+            </div>
+            <div class="footer-section">
+                <h3>Call to Action</h3>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at (708) 442-1223.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PeopleCare Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

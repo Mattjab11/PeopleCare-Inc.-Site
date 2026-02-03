@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Help - PeopleCare, Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <style>
+        .content-section { max-width: 1300px; margin: 8rem auto; padding: 0 3rem; }
+        .intro { text-align: center; max-width: 800px; margin: 0 auto 5rem; }
+        .intro p { font-size: 1.3rem; color: var(--text-light); line-height: 1.9; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem; }
+        .service-detail { background: var(--white); padding: 3.5rem; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .service-detail::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--accent), var(--warm)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+        .service-detail:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .service-detail:hover::before { transform: scaleX(1); }
+        .service-detail h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: 700; }
+        .service-detail p { color: var(--text-light); line-height: 1.9; font-size: 1.1rem; }
+        .contact-cta { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--white); padding: 5rem 3rem; text-align: center; margin-top: 6rem; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .contact-cta h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 900; }
+        .contact-cta p { font-size: 1.3rem; margin-bottom: 2.5rem; }
+        .contact-cta .phone { font-size: 2.5rem; font-weight: 700; color: var(--warm); text-decoration: none; transition: all 0.3s ease; }
+        .contact-cta .phone:hover { color: var(--accent-light); transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">PeopleCare</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Get Help</h1>
+        <p>Compassionate. Supportive. Accessible. Responsive.</p>
+    </section>
+
+    <section class="content-section">
+        <div class="intro">
+            <p>Our services provide needed one-to-one contact so essential to the emotional health and well-being of those living alone.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-detail">
+                <h3>Friendly Visitors</h3>
+                <p>A volunteer friend to visit a homebound older adult to hold a hand…play a game…or just sit and talk.</p>
+            </div>
+            <div class="service-detail">
+                <h3>Volunteer Transportation Programs</h3>
+                <p>A caring volunteer driver who focuses on the special needs of those who have no other way to get to handle personal errands like medical visits, drug store pick-ups and financial appointments in a safe manner.</p>
+            </div>
+            <div class="service-detail">
+                <h3>Voucher Taxi Program</h3>
+                <p>A limited use subsidized taxi program for those who no longer drive but are still independent at their destination. Designed especially for rides to medical and financial appointments, drug store or grocery shopping.</p>
+            </div>
+            <div class="service-detail">
+                <h3>Information and Referral</h3>
+                <p>Each referral receives the attention it deserves, including the all important follow-up to make sure your needs are being met. We maintain an up-to-date library of agencies and services community to make referral complete and timely.</p>
+            </div>
+            <div class="service-detail">
+                <h3>Weekly Coop Grocery Shopping</h3>
+                <p>Instituted in cooperation with The British Home Retirement Community the weekly excursions offer access to local groceries, banks and pharmacies. Caregiver assistance is offered for those who need help with shopping.</p>
+            </div>
+            <div class="service-detail">
+                <h3>Powerful Tools for Caregivers</h3>
+                <p>Caregiving can be stressful…physically, emotionally and financially. Powerful Tools for Caregivers is an educational program designed to provide you — the caregiver — with the tools needed to take care of yourself.</p>
+            </div>
+        </div>
+
+        <div class="contact-cta">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us to learn more about our services or to request assistance</p>
+            <a href="tel:7084421223" class="phone">(708) 442-1223</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PeopleCare, Inc.</h3>
+                <p>273 Nuttall Road<br>Riverside, IL 60546</p>
+                <p>Phone: (708) 442-1223</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="get-help.html">Get Help</a>
+                <a href="get-involved.html">Volunteer</a>
+                <a href="donations.html">Donate</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <a href="get-help.html">Friendly Visitors</a>
+                <a href="get-help.html">Transportation</a>
+                <a href="get-help.html">Caregiver Support</a>
+                <a href="get-help.html">Information & Referral</a>
+            </div>
+            <div class="footer-section">
+                <h3>Call to Action</h3>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at (708) 442-1223.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PeopleCare Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
