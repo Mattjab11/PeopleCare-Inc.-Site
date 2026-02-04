@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Involved - PeopleCare, Inc.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="enhanced-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared-theme.css">
     <style>
-        .content-section { max-width: 1100px; margin: 8rem auto; padding: 0 3rem; }
-        .intro { margin-bottom: 5rem; text-align: center; }
-        .intro p { font-size: 1.3rem; color: var(--text-light); line-height: 1.9; }
-        .volunteer-types { background: var(--white); padding: 4rem; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); margin-bottom: 4rem; }
-        .volunteer-types h3 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--primary); margin-bottom: 2.5rem; font-weight: 900; }
-        .volunteer-type { margin-bottom: 3rem; padding: 2rem; background: var(--cream); border-radius: 20px; border-left: 6px solid var(--accent); transition: all 0.3s ease; }
-        .volunteer-type:hover { transform: translateX(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .volunteer-type h4 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem; font-weight: 700; }
-        .volunteer-type p { color: var(--text-light); line-height: 1.9; font-size: 1.1rem; }
-        .benefits-box { background: linear-gradient(135deg, var(--cream), #FFF8E7); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--warm); margin-bottom: 4rem; box-shadow: 0 15px 50px rgba(0,0,0,0.08); }
-        .benefits-box h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 2rem; font-weight: 900; }
-        .benefits-box p { font-size: 1.2rem; color: var(--text); line-height: 2; margin-bottom: 1.5rem; }
-        .contact-cta { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--white); padding: 5rem 3rem; text-align: center; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .contact-cta h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 900; }
-        .contact-cta p { font-size: 1.3rem; margin-bottom: 2rem; }
-        .contact-cta .phone { font-size: 2.5rem; font-weight: 700; color: var(--warm); text-decoration: none; }
+        .content { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) 2rem; }
+        .intro { text-align: center; margin-bottom: 3rem; }
+        .intro p { font-size: clamp(1.1rem, 3vw, 1.3rem); color: var(--text-light); }
+        .box { background: var(--white); padding: clamp(2rem, 5vw, 3rem); border-radius: 20px; box-shadow: 0 10px 30px rgba(91, 155, 213, 0.1); margin: 2rem 0; border-left: 5px solid var(--primary); }
+        .box h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 2.5rem); color: var(--primary); margin-bottom: 1.5rem; }
+        .box h3 { font-family: 'Lato', sans-serif; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--primary); margin: 1.5rem 0 1rem; }
+        .box p { color: var(--text-light); line-height: 1.9; font-size: clamp(1rem, 2.5vw, 1.1rem); margin-bottom: 1rem; }
+        .highlight { background: var(--cream); padding: 2rem; border-radius: 15px; margin: 2rem 0; }
+        .cta { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white); padding: clamp(2.5rem, 5vw, 3.5rem) 2rem; text-align: center; border-radius: 20px; margin-top: 3rem; }
+        .cta h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
+        .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
+        .cta .phone:hover { background: var(--white); color: var(--primary); }
     </style>
 </head>
 <body>
     <header>
+        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
         <div class="header-content">
-            <a href="index.html" class="logo">PeopleCare</a>
-            <nav>
+            <div class="logo-container">
+                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="get-help.html">Get Help</a></li>
@@ -42,39 +42,28 @@
             </nav>
         </div>
     </header>
+    <img src="PeopleCareImg.png" alt="The Power of an Hour" class="banner-image">
 
-    <section class="page-hero">
-        <h1>Get Involved</h1>
-        <p>The Power of Your Hour is a Great Way to Give Back</p>
-    </section>
-
-    <section class="content-section">
-        <div class="intro">
-            <p>The Power of your hour…is a great way to give back to your community and help your elderly neighbors!</p>
+    <section class="page-hero"><h1>Get Involved</h1><p>The Power of Your Hour</p></section>
+    
+    <section class="content">
+        <div class="intro"><p>The Power of your hour…is a great way to give back to your community and help your elderly neighbors!</p></div>
+        
+        <div class="box">
+            <h2>Volunteer Opportunities</h2>
+            <h3>Driver Volunteers</h3>
+            <p>Drive frail elderly to and from appointments as needed. Our drivers are good listeners, too and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed. <strong>PeopleCare does reimburse our volunteers for the cost of fuel.</strong></p>
+            <h3>Friendly Visitors</h3>
+            <p>Meet with the frail elderly clients in their home or retirement facility as needed so they may talk and reminisce. Being a good listener and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed.</p>
         </div>
-
-        <div class="volunteer-types">
-            <h3>Volunteer Opportunities</h3>
-            
-            <div class="volunteer-type">
-                <h4>Driver Volunteers</h4>
-                <p>Drive frail elderly to and from appointments as needed. Our drivers are good listeners, too and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed. <strong>PeopleCare does reimburse our volunteers for the cost of fuel.</strong></p>
-            </div>
-
-            <div class="volunteer-type">
-                <h4>Friendly Visitors</h4>
-                <p>Meet with the frail elderly clients in their home or retirement facility as needed so they may talk and reminisce. Being a good listener and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed.</p>
-            </div>
-        </div>
-
-        <div class="benefits-box">
-            <h3>…and what do I get out of this?</h3>
+        
+        <div class="highlight box">
+            <h2>…and what do I get out of this?</h2>
             <p>You will be making a significant contribution to your community and society in general. Not only will you feel a sense of discovery and adventure, but you will feel a strong sense satisfaction and value to the people you serve.</p>
-            <p>Many times sharing your life's lessons with others and hearing the wealth of experience filling the minds of those you help gives one a strong sense of well-being.</p>
-            <p>You will also be part of a group of like people with a clear purpose of helping the homebound elderly.</p>
+            <p>Many times sharing your life's lessons with others and hearing the wealth of experience filling the minds of those you help gives one a strong sense of well-being. You will also be part of a group of like people with a clear purpose of helping the homebound elderly.</p>
         </div>
-
-        <div class="contact-cta">
+        
+        <div class="cta">
             <h2>Ready to Get Involved?</h2>
             <p>Give us a call or visit our contact page</p>
             <a href="tel:7084421223" class="phone">(708) 442-1223</a>
@@ -86,7 +75,7 @@
             <div class="footer-section">
                 <h3>PeopleCare, Inc.</h3>
                 <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p>Phone: (708) 442-1223</p>
+                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -104,12 +93,24 @@
             </div>
             <div class="footer-section">
                 <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at (708) 442-1223.</p>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 PeopleCare Inc. All rights reserved.</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

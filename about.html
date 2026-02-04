@@ -4,34 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - PeopleCare, Inc.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="enhanced-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared-theme.css">
     <style>
-        .content-section { max-width: 1000px; margin: 8rem auto; padding: 0 3rem; }
-        .about-content { background: var(--white); padding: 5rem; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
-        .about-content h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary); margin-bottom: 2.5rem; font-weight: 900; letter-spacing: -1px; }
-        .about-content p { font-size: 1.2rem; color: var(--text-light); line-height: 2; margin-bottom: 2rem; }
-        .highlight { background: linear-gradient(135deg, var(--cream), #FFF8E7); padding: 3rem; border-radius: 20px; border-left: 8px solid var(--accent); margin: 3rem 0; }
-        .highlight p { color: var(--text); font-weight: 600; font-size: 1.3rem; }
-        .board-section { margin-top: 5rem; background: var(--cream); padding: 4rem; border-radius: 30px; }
-        .board-section h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary); margin-bottom: 3rem; text-align: center; font-weight: 900; }
-        .board-category { margin-bottom: 3rem; }
-        .board-category h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); margin: 2.5rem 0 1.5rem; font-weight: 700; }
-        .board-member { margin-bottom: 2rem; padding: 1.5rem; background: var(--white); border-radius: 15px; transition: all 0.3s ease; }
-        .board-member:hover { transform: translateX(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .board-member strong { color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 0.3rem; }
-        .board-member em { color: var(--text-light); font-size: 1.05rem; }
+        .content { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) 2rem; }
+        .intro { text-align: center; margin-bottom: 3rem; }
+        .intro p { font-size: clamp(1.1rem, 3vw, 1.3rem); color: var(--text-light); }
+        .box { background: var(--white); padding: clamp(2rem, 5vw, 3rem); border-radius: 20px; box-shadow: 0 10px 30px rgba(91, 155, 213, 0.1); margin: 2rem 0; border-left: 5px solid var(--primary); }
+        .box h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 2.5rem); color: var(--primary); margin-bottom: 1.5rem; }
+        .box h3 { font-family: 'Lato', sans-serif; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--primary); margin: 1.5rem 0 1rem; }
+        .box p { color: var(--text-light); line-height: 1.9; font-size: clamp(1rem, 2.5vw, 1.1rem); margin-bottom: 1rem; }
+        .highlight { background: var(--cream); padding: 2rem; border-radius: 15px; margin: 2rem 0; }
+        .cta { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white); padding: clamp(2.5rem, 5vw, 3.5rem) 2rem; text-align: center; border-radius: 20px; margin-top: 3rem; }
+        .cta h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
+        .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
+        .cta .phone:hover { background: var(--white); color: var(--primary); }
     </style>
 </head>
 <body>
     <header>
+        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
         <div class="header-content">
-            <a href="index.html" class="logo">PeopleCare</a>
-            <nav>
+            <div class="logo-container">
+                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="get-help.html">Get Help</a></li>
-                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="get-involved.html">About Us</a></li>
                     <li><a href="donations.html">Donations</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
@@ -40,81 +42,31 @@
             </nav>
         </div>
     </header>
+    <img src="PeopleCareImg.png" alt="The Power of an Hour" class="banner-image">
 
-    <section class="page-hero">
-        <h1>About Us</h1>
-        <p>We Touch People's Lives</p>
-    </section>
-
-    <section class="content-section">
-        <div class="about-content">
-            <h2>Our Story</h2>
-            <p>As true today as it was when our doors opened in 1990…the PeopleCare mission remains our driving force.</p>
-            
-            <p>PeopleCare began providing a volunteer visitation program to the homebound elderly, often serving as respite for a primary caregiver. Today, PeopleCare volunteers are still reaching out to the elderly, only with an array of services including information and referral, transportation, shopping, visitation, and caregiver support.</p>
-            
-            <p>Programs specifically target communities without programs and were developed to benefit those whose age or physical condition limits their mobility.</p>
-            
-            <div class="highlight">
-                <p>PeopleCare. We're here everyday to show just how much.</p>
-            </div>
+    <section class="page-hero"><h1>About Us</h1><p>We Touch Peoples Lives</p></section>
+    
+    <section class="content">
+        <div class="intro"><p>The Power of your hour…is a great way to give back to your community and help your elderly neighbors!</p></div>
+        
+        <div class="box">
+            <h2>Volunteer Opportunities</h2>
+            <h3>Driver Volunteers</h3>
+            <p>Drive frail elderly to and from appointments as needed. Our drivers are good listeners, too and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed. <strong>PeopleCare does reimburse our volunteers for the cost of fuel.</strong></p>
+            <h3>Friendly Visitors</h3>
+            <p>Meet with the frail elderly clients in their home or retirement facility as needed so they may talk and reminisce. Being a good listener and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed.</p>
         </div>
-
-        <div class="board-section">
-            <h2>Board of Directors</h2>
-            
-            <div class="board-category">
-                <h3>Officers</h3>
-                
-                <div class="board-member">
-                    <strong>Mary Coonda</strong>, President<br>
-                    <em>Social Security Administration, Retired</em>
-                </div>
-                
-                <div class="board-member">
-                    <strong>Joseph Skaggs, Jr.</strong>, Vice President/Secretary<br>
-                    <em>JTS & Associates, L.L.C.</em>
-                </div>
-                
-                <div class="board-member">
-                    <strong>Tom Piette</strong>, Treasurer<br>
-                    <em>MidCo, Inc.</em>
-                </div>
-            </div>
-
-            <div class="board-category">
-                <h3>Members</h3>
-                
-                <div class="board-member">
-                    <strong>Russell L. Jablonski</strong><br>
-                    <em>AT&T</em>
-                </div>
-                
-                <div class="board-member">
-                    <strong>Bruce F. Jablonski</strong><br>
-                    Executive Director, PeopleCare, Inc.
-                </div>
-                
-                <div class="board-member">
-                    <strong>Brian Kuratko</strong>, Senior Relations Officer<br>
-                    Lyons Police Department
-                </div>
-                
-                <div class="board-member">
-                    <strong>Lorraine A. Marek</strong><br>
-                    PeopleCare, Inc./St. Hugh's Church
-                </div>
-                
-                <div class="board-member">
-                    <strong>Dr. Ita Sih</strong><br>
-                    Adventist Midwest Geriatrics
-                </div>
-                
-                <div class="board-member">
-                    <strong>Jean Vondriska</strong><br>
-                    Field Museum Foundation
-                </div>
-            </div>
+        
+        <div class="highlight box">
+            <h2>…and what do I get out of this?</h2>
+            <p>You will be making a significant contribution to your community and society in general. Not only will you feel a sense of discovery and adventure, but you will feel a strong sense satisfaction and value to the people you serve.</p>
+            <p>Many times sharing your life's lessons with others and hearing the wealth of experience filling the minds of those you help gives one a strong sense of well-being. You will also be part of a group of like people with a clear purpose of helping the homebound elderly.</p>
+        </div>
+        
+        <div class="cta">
+            <h2>Ready to About Us?</h2>
+            <p>Give us a call or visit our contact page</p>
+            <a href="tel:7084421223" class="phone">(708) 442-1223</a>
         </div>
     </section>
 
@@ -123,7 +75,7 @@
             <div class="footer-section">
                 <h3>PeopleCare, Inc.</h3>
                 <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p>Phone: (708) 442-1223</p>
+                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -141,12 +93,24 @@
             </div>
             <div class="footer-section">
                 <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at (708) 442-1223.</p>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 PeopleCare Inc. All rights reserved.</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>

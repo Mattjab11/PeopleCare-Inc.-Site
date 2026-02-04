@@ -4,31 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donations - PeopleCare, Inc.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="enhanced-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared-theme.css">
     <style>
-        .content-section { max-width: 1000px; margin: 8rem auto; padding: 0 3rem; }
-        .intro { font-size: 1.3rem; color: var(--text-light); line-height: 2; text-align: center; margin-bottom: 4rem; }
-        .mission-statement { background: linear-gradient(135deg, var(--cream), #FFF8E7); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--accent); margin: 4rem 0; box-shadow: 0 15px 50px rgba(0,0,0,0.08); }
-        .mission-statement h3 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--primary); margin-bottom: 2rem; font-weight: 900; }
-        .mission-statement p { font-size: 1.2rem; color: var(--text); line-height: 2; }
-        .donation-section { background: var(--white); padding: 4rem; border-radius: 30px; box-shadow: 0 15px 50px rgba(0,0,0,0.08); margin: 3rem 0; }
-        .donation-section h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--primary); margin-bottom: 2rem; font-weight: 900; }
-        .donation-section p { color: var(--text-light); line-height: 1.9; margin-bottom: 1.5rem; font-size: 1.1rem; }
-        blockquote { font-style: italic; padding: 2.5rem; background: var(--cream); border-left: 6px solid var(--primary); margin: 2.5rem 0; border-radius: 15px; font-size: 1.1rem; line-height: 1.9; }
-        .donation-section a { color: var(--accent); font-weight: 700; text-decoration: none; }
-        .donation-section a:hover { color: var(--primary); }
+        .content { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) 2rem; }
+        .intro { text-align: center; margin-bottom: 3rem; }
+        .intro p { font-size: clamp(1.1rem, 3vw, 1.3rem); color: var(--text-light); }
+        .box { background: var(--white); padding: clamp(2rem, 5vw, 3rem); border-radius: 20px; box-shadow: 0 10px 30px rgba(91, 155, 213, 0.1); margin: 2rem 0; border-left: 5px solid var(--primary); }
+        .box h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 2.5rem); color: var(--primary); margin-bottom: 1.5rem; }
+        .box h3 { font-family: 'Lato', sans-serif; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--primary); margin: 1.5rem 0 1rem; }
+        .box p { color: var(--text-light); line-height: 1.9; font-size: clamp(1rem, 2.5vw, 1.1rem); margin-bottom: 1rem; }
+        .highlight { background: var(--cream); padding: 2rem; border-radius: 15px; margin: 2rem 0; }
+        .cta { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white); padding: clamp(2.5rem, 5vw, 3.5rem) 2rem; text-align: center; border-radius: 20px; margin-top: 3rem; }
+        .cta h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
+        .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
+        .cta .phone:hover { background: var(--white); color: var(--primary); }
     </style>
 </head>
 <body>
     <header>
+        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
         <div class="header-content">
-            <a href="index.html" class="logo">PeopleCare</a>
-            <nav>
+            <div class="logo-container">
+                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="get-help.html">Get Help</a></li>
-                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="get-involved.html">Donations</a></li>
                     <li><a href="donations.html">Donations</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
@@ -37,41 +42,15 @@
             </nav>
         </div>
     </header>
+    <img src="PeopleCareImg.png" alt="The Power of an Hour" class="banner-image">
 
-    <section class="page-hero">
-        <h1>Donations</h1>
-        <p>You Can Help Change Someone's World</p>
-    </section>
-
-    <section class="content-section">
-        <p class="intro">PeopleCare was called on over 2,500 times last year to help the frail elderly and their families. We could not have done that without the valuable gifts of time, talent and resources in support of our Mission. Thank you!</p>
-
-        <div class="mission-statement">
-            <h3>Our Mission</h3>
-            <p>Using primarily volunteers, PeopleCare will assist and support the involuntarily homebound elderly by providing socialization, emotional support and access to service providers, where no one is denied service.</p>
-        </div>
-
-        <div class="donation-section">
-            <h2>Charitable Giving</h2>
-            <p>PeopleCare welcomes monetary and in-kind gifts to help maintain our vision that "no older adult in the last third of life should ever feel abandoned but should be able to live their life in the most productive way possible". All donations are tax deductible according to current IRS regulations regarding 501(c)(3) non-profit organizations.</p>
-        </div>
-
-        <div class="donation-section">
-            <h2>Planned Giving</h2>
-            <p>You can make a lasting statement and support the work of PeopleCare forever through a contribution. Many individuals have chosen to make a gift by including the following language in their will or trust:</p>
-            
-            <blockquote>
-                "I give, devise and bequeath to PeopleCare, Inc., a non-profit service and charitable organization whose mailing address is PeopleCare, Inc, 60 Akenside Road, Riverside, IL 60546, _____ percent of my estate (or, the sum of $_____; or , _____ percent of the residue of my estate) to support the PeopleCare Endowment for Life Long Service (or the PeopleCare Annual Fund)."
-            </blockquote>
-
-            <p>To learn more about planned gifts contact Judy Mantel, Executive Director, at 60 Akenside Road, Riverside, IL 60546 or 708.442.1223 or email judy.mantel@peoplecareinc.org</p>
-        </div>
-
-        <div class="donation-section">
-            <h2>The Power of an Hour</h2>
-            <p>What can volunteering one hour mean? To a PeopleCare client it can mean a doctor's appointment on time…a filled prescription…or a friendly ear. To a PeopleCare volunteer it's seeing the amazing difference their time can make. Every hour is precious. We think that's the most important lesson of all.</p>
-            <p><a href="get-involved.html">Learn about volunteer opportunities →</a></p>
-        </div>
+    <section class="page-hero"><h1>Donations</h1><p>You Can Help Change Someones World</p></section>
+    
+    <section class="content" style="max-width:900px">
+        <p style="font-size:1.2rem;text-align:center;margin-bottom:3rem;color:var(--text-light)">PeopleCare was called on over 2,500 times last year to help the frail elderly and their families.</p>
+        <div style="background:var(--cream);padding:3rem;border-radius:20px;margin:2rem 0"><h2 style="font-family:Dancing Script,cursive;font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem">Our Mission</h2><p style="line-height:1.9">Using primarily volunteers, PeopleCare will assist and support the involuntarily homebound elderly by providing socialization, emotional support and access to service providers, where no one is denied service.</p></div>
+        <div style="background:var(--white);padding:3rem;border-radius:20px;box-shadow:0 10px 30px rgba(107,123,163,0.1);margin:2rem 0;border-left:5px solid var(--primary)"><h2 style="font-family:Dancing Script,cursive;font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem">Charitable Giving</h2><p style="line-height:1.9">PeopleCare welcomes monetary and in-kind gifts to help maintain our vision that "no older adult in the last third of life should ever feel abandoned but should be able to live their life in the most productive way possible". All donations are tax deductible according to current IRS regulations regarding 501(c)(3) non-profit organizations.</p></div>
+        <div style="background:var(--white);padding:3rem;border-radius:20px;box-shadow:0 10px 30px rgba(107,123,163,0.1);margin:2rem 0;border-left:5px solid var(--primary)"><h2 style="font-family:Dancing Script,cursive;font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem">Planned Giving</h2><p style="line-height:1.9">You can make a lasting statement and support the work of PeopleCare forever through a contribution. To learn more contact Judy Mantel, Executive Director, at <a href="tel:7084421223" style="color:var(--primary);font-weight:600">708.442.1223</a></p></div>
     </section>
 
     <footer>
@@ -79,7 +58,7 @@
             <div class="footer-section">
                 <h3>PeopleCare, Inc.</h3>
                 <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p>Phone: (708) 442-1223</p>
+                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -97,12 +76,24 @@
             </div>
             <div class="footer-section">
                 <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at (708) 442-1223.</p>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 PeopleCare Inc. All rights reserved.</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
