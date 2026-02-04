@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeopleCare, Inc. - Touching Lives Every Day</title>
+    <title>Home : PeopleCare, Inc.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1B4332;
-            --primary-light: #2D6A4F;
-            --accent: #E76F51;
-            --accent-light: #F4A261;
-            --cream: #FAF3E0;
-            --warm: #E9C46A;
-            --dark: #081C15;
-            --text: #2C3E32;
-            --text-light: #5A6F5F;
+            --primary: #5B9BD5;
+            --primary-dark: #4A7FB8;
+            --accent: #8EC4E8;
+            --light-blue: #B8D9F0;
+            --cream: #F5F9FC;
             --white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-light: #5A6C7D;
         }
 
         * {
@@ -29,838 +27,444 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            color: var(--text);
+            color: var(--text-dark);
             line-height: 1.7;
             overflow-x: hidden;
         }
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
-            position: fixed;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(91, 155, 213, 0.15);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
-        header.scrolled {
-            box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+        .header-top {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 0.8rem 0;
+            text-align: center;
+        }
+
+        .header-top a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
         }
 
         .header-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.5rem 3rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-            transition: color 0.3s ease;
+        .logo-img {
+            height: clamp(50px, 10vw, 60px);
+            width: auto;
         }
 
-        .logo:hover {
-            color: var(--accent);
+        .mobile-menu-btn {
+            display: none;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 3rem;
+            gap: clamp(1rem, 3vw, 2rem);
             align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--text);
+            color: var(--text-dark);
             font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
             transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
         }
 
-        nav a::before {
+        nav a::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--warm));
+            background: var(--primary);
             transition: width 0.3s ease;
-            border-radius: 2px;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
-        nav a:hover::before {
+        nav a:hover::after {
             width: 100%;
         }
 
-        /* Hero */
-        .hero {
-            margin-top: 90px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--dark) 100%);
-            color: var(--white);
-            padding: 10rem 3rem 8rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 15% 50%, rgba(233, 196, 106, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 85% 30%, rgba(244, 162, 97, 0.1) 0%, transparent 40%),
-                url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            border-radius: 60px;
-            font-weight: 700;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: inline-block;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            color: var(--white);
-            box-shadow: 0 8px 30px rgba(231, 111, 81, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(231, 111, 81, 0.5);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 3px solid var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary);
-            border-color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        /* COVID Banner */
-        .covid-banner {
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
-            color: var(--white);
-            padding: 3rem 3rem;
-            position: relative;
-        }
-
-        .covid-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--warm), var(--accent));
-        }
-
-        .covid-banner-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .covid-banner h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .covid-banner p {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            opacity: 0.95;
-        }
-
-        /* Mission Section */
-        .mission {
-            padding: 8rem 3rem;
-            background: 
-                linear-gradient(to bottom, var(--white) 0%, var(--cream) 100%);
-            position: relative;
-        }
-
-        .mission-content {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-        }
-
-        .mission-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            line-height: 1.1;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
-
-        .mission-text p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            line-height: 1.9;
-        }
-
-        .mission-highlight {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 25px;
-            border-left: 6px solid var(--accent);
-            box-shadow: 
-                0 20px 60px rgba(0,0,0,0.08),
-                0 0 0 1px rgba(0,0,0,0.02);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .mission-highlight:hover {
-            transform: translateY(-5px);
-            box-shadow: 
-                0 30px 80px rgba(0,0,0,0.12),
-                0 0 0 1px rgba(0,0,0,0.02);
-        }
-
-        .mission-highlight p {
-            color: var(--text);
-            font-weight: 500;
-            font-size: 1.15rem;
-            line-height: 1.9;
-            margin-bottom: 1.2rem;
-        }
-
-        /* Stats */
-        .stats {
-            background: var(--primary);
-            padding: 6rem 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(233, 196, 106, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(244, 162, 97, 0.08) 0%, transparent 50%);
-        }
-
-        .stats-grid {
+        /* Content Sections */
+        .content-section {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4rem;
-            position: relative;
-            z-index: 1;
+            padding: clamp(3rem, 6vw, 5rem) 2rem;
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.4s ease;
+        .section-light {
+            background: var(--white);
         }
 
-        .stat-item:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 900;
-            color: var(--warm);
-            line-height: 1;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            color: var(--white);
-            opacity: 0.95;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        /* Services */
-        .services {
-            padding: 8rem 3rem;
+        .section-cream {
             background: var(--cream);
         }
 
-        .services-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 5rem;
+        .section-blue {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
         }
 
-        .services-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--primary);
+        h1, h2 {
+            font-weight: 700;
+            line-height: 1.3;
             margin-bottom: 1.5rem;
-            font-weight: 900;
         }
 
-        .services-header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .services-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent), var(--warm));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
             color: var(--primary);
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--primary);
+        }
+
+        .section-blue h1,
+        .section-blue h2 {
+            color: var(--white);
+        }
+
+        p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.8;
             margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .section-blue p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        strong {
+            color: var(--text-dark);
             font-weight: 700;
         }
 
-        .service-card p {
-            color: var(--text-light);
-            line-height: 1.8;
-            font-size: 1.05rem;
+        .section-blue strong {
+            color: var(--white);
         }
 
-        /* Story Section */
-        .story {
-            padding: 8rem 3rem;
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Card Style */
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(91, 155, 213, 0.12);
+            border-left: 5px solid var(--primary);
+        }
+
+        .section-cream .card {
             background: var(--white);
         }
 
-        .story-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .story h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 3rem;
+        /* Memorial Box */
+        .memorial-box {
             text-align: center;
-            font-weight: 900;
+            padding: 2rem;
+            background: var(--cream);
+            border-radius: 15px;
+            margin: 2rem 0;
         }
 
-        .story-box {
-            background: linear-gradient(135deg, var(--cream), #FFF8E7);
-            padding: 4rem;
-            border-radius: 30px;
-            border-left: 8px solid var(--accent);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        .story-box::before {
-            content: '"';
-            position: absolute;
-            top: 2rem;
-            left: 3rem;
-            font-family: 'Playfair Display', serif;
-            font-size: 10rem;
-            color: var(--accent);
-            opacity: 0.1;
-            line-height: 1;
-        }
-
-        .story-box p {
-            color: var(--text);
-            font-size: 1.2rem;
-            line-height: 2;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .story-box .initial {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 900;
-            color: var(--accent);
-            float: left;
-            line-height: 0.8;
-            margin-right: 0.8rem;
-            margin-top: 0.3rem;
-        }
-
-        /* Memorial */
-        .memorial {
-            padding: 8rem 3rem;
-            background: linear-gradient(to bottom, var(--white), var(--cream));
-        }
-
-        .memorial-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .memorial-image-wrapper {
-            width: 250px;
-            height: 250px;
-            margin: 0 auto 2.5rem;
-            position: relative;
-        }
-
-        .memorial-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
+        .memorial-img {
+            width: clamp(150px, 40vw, 200px);
+            height: clamp(150px, 40vw, 200px);
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--warm));
-            opacity: 0.2;
-            z-index: 0;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 5px solid var(--white);
+            box-shadow: 0 8px 25px rgba(91, 155, 213, 0.2);
         }
 
-        .memorial-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            border: 8px solid var(--white);
-            position: relative;
-            z-index: 1;
-        }
-
-        .memorial h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary);
+        .memorial-box h2 {
             margin-bottom: 0.5rem;
+        }
+
+        .memorial-box .years {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .memorial-box a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Story Initial Letter */
+        .story-initial {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+        }
+
+        /* CTA Buttons */
+        .cta-box {
+            text-align: center;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--light-blue));
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        .cta-box img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-box img:hover {
+            transform: scale(1.05);
+        }
+
+        .phone-link {
+            color: var(--primary);
+            text-decoration: none;
             font-weight: 700;
+            font-size: 1.2rem;
         }
 
-        .memorial .years {
-            font-size: 1.5rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .memorial p {
-            color: var(--text-light);
-            line-height: 1.9;
-            font-size: 1.15rem;
+        .phone-link:hover {
+            text-decoration: underline;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--dark), var(--primary));
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: var(--white);
-            padding: 5rem 3rem 2rem;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--warm), var(--accent));
-        }
-
-        .footer-content {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 4rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--warm);
-            font-weight: 700;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.85);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.8rem;
-            transition: all 0.3s ease;
-            line-height: 1.7;
-        }
-
-        .footer-section a:hover {
-            color: var(--warm);
-            transform: translateX(5px);
-        }
-
-        .footer-bottom {
+            padding: 2rem;
             text-align: center;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            color: rgba(255, 255, 255, 0.7);
             font-size: 0.95rem;
         }
 
-        /* Responsive */
+        footer a {
+            color: var(--light-blue);
+            text-decoration: none;
+        }
+
+        /* Mobile */
         @media (max-width: 768px) {
-            .hero {
-                padding: 6rem 2rem 4rem;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
+            .mobile-menu-btn {
+                display: block;
             }
 
-            .hero p {
-                font-size: 1.2rem;
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
             }
 
-            .mission-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+            nav.active {
+                display: block;
             }
 
             nav ul {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0;
+                background: var(--cream);
+                border-radius: 10px;
+                padding: 1rem 0;
             }
 
-            .header-content {
-                flex-direction: column;
-                gap: 1.5rem;
+            nav li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(91, 155, 213, 0.1);
             }
 
-            .stats-grid {
+            nav li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem;
+            }
+
+            .two-column {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="header-top">
+            <a href="tel:7084421223">📞 Call Us: (708) 442-1223</a>
+        </div>
         <div class="header-content">
-            <a href="index.html" class="logo">PeopleCare</a>
-            <nav>
+            <div class="logo-container">
+                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
                     <li><a href="get-help.html">Get Help</a></li>
                     <li><a href="get-involved.html">Get Involved</a></li>
                     <li><a href="donations.html">Donations</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>How We Touch People's Lives</h1>
-            <p>We touch people's lives. We're always amazed at how much they return the favor.</p>
-            <div class="cta-buttons">
-                <a href="get-help.html" class="btn btn-primary">Get Help</a>
-                <a href="get-involved.html" class="btn btn-secondary">Volunteer With Us</a>
-            </div>
-        </div>
-    </section>
+    <img src="PeopleCareImg.png" alt="The Power of an Hour - PeopleCare" class="banner-image">
 
-    <section class="covid-banner">
-        <div class="covid-banner-content">
+    <!-- COVID-19 Update -->
+    <section class="section-blue">
+        <div class="content-section">
             <h2>COVID-19 Update</h2>
             <p>We have weathered the worst of the storm <strong>together</strong>! PeopleCare, Inc. is back to providing our regular services following the CDC and IDPH guidelines, and this includes <strong>TRANSPORTATION</strong>. We are continuing our telephone reassurance calls as these have formed new friendships! We will also continue to make no contact delivery of groceries and medications for those in need. Please do not hesitate to reach out to us if you have any questions, or would like to schedule a service. Watch for more information about our newest program, Telemedicine, where we bring your doctor's appointment directly to you in your home. We are looking forward to supporting our seniors in our neighborhood as we have done so for the last 30 years.</p>
         </div>
     </section>
 
-    <section class="mission">
-        <div class="mission-content">
-            <div class="mission-text">
-                <h2>Our Mission</h2>
-                <p>Need always appears to be so overwhelming. Yet in our experience, it begins to cower in the face of a simple smile. It flinches when a hand takes an elbow.</p>
-                <p>Fact is, PeopleCare people, our clients, live with need every day and our volunteers face it down armed with little more than car keys or a telephone or a hot meal.</p>
-            </div>
-            <div class="mission-highlight">
-                <p>Using primarily volunteers PeopleCare will assist and support the homebound elderly by providing socialization, emotional support and access to service providers where no one is denied services.</p>
-                <p>In 1990, PeopleCare began providing a volunteer friendly visitation program to the homebound, which often served as a respite for a primary caregiver. Today, PeopleCare is still reaching out to the elderly, specifically targeting communities without programs to benefit those whose age or physical condition limits their mobility.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">30+</div>
-                <div class="stat-label">Years of Service</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">1,700+</div>
-                <div class="stat-label">Clients Served Annually</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Volunteer Driven</div>
+    <!-- How we touch people's lives -->
+    <section class="section-light">
+        <div class="content-section">
+            <h1>How we touch</h1>
+            <h2>people's lives</h2>
+            <div class="two-column">
+                <div>
+                    <p>Need always appears to be so overwhelming. Yet in our experience, it begins to cower in the face of a simple smile. It flinches when a hand takes an elbow. Fact is, PeopleCare people, our clients, live with need every day and our volunteers face it down armed with little more than car keys or a telephone or a hot meal.</p>
+                    <p><strong>We touch people's lives. We're always amazed at how much they return the favor.</strong></p>
+                </div>
+                <div class="card">
+                    <h2>PeopleCare</h2>
+                    <p>Using primarily volunteers PeopleCare will assist and support the homebound elderly by providing socialization, emotional support and access to service providers where no one is denied services.</p>
+                    <p>In 1990, PeopleCare began providing a volunteer friendly visitation program to the homebound, which often served as a respite for a primary caregiver. Today, PeopleCare is still reaching out to the elderly, specifically targeting communities without programs to benefit those whose age or physical condition limits their mobility. PeopleCare serves more than 1,700 clients annually.</p>
+                    <p><strong>PeopleCare.</strong> <strong>We're here every day to show just how much.</strong></p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="services">
-        <div class="services-header">
-            <h2>How We Serve</h2>
-            <p>PeopleCare offers comprehensive support services to help elderly community members maintain their independence and dignity.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Friendly Visitors</h3>
-                <p>A volunteer friend to visit a homebound older adult to hold a hand, play a game, or just sit and talk.</p>
-            </div>
-            <div class="service-card">
-                <h3>Transportation</h3>
-                <p>Caring volunteer drivers who focus on the special needs of those who have no other way to get to medical visits, drug store pick-ups and financial appointments.</p>
-            </div>
-            <div class="service-card">
-                <h3>Voucher Taxi Program</h3>
-                <p>A limited use subsidized taxi program for those who no longer drive but are still independent at their destination.</p>
-            </div>
-            <div class="service-card">
-                <h3>Information & Referral</h3>
-                <p>Each referral receives attention it deserves, including follow-up to make sure your needs are being met.</p>
-            </div>
-            <div class="service-card">
-                <h3>Grocery Shopping</h3>
-                <p>Weekly excursions offering access to local groceries, banks and pharmacies with caregiver assistance available.</p>
-            </div>
-            <div class="service-card">
-                <h3>Caregiver Support</h3>
-                <p>Powerful Tools for Caregivers program designed to provide caregivers with the tools needed to take care of themselves.</p>
+    <!-- Helen Jablonski Memorial -->
+    <section class="section-cream">
+        <div class="content-section">
+            <div class="memorial-box">
+                <a href="https://www.peoplecareinc.org/2014/03/03/helen-jablonski-1917-2014/">
+                    <img src="https://www.peoplecareinc.org/wp-content/uploads/2010/03/Helen-Jablonski.jpg" alt="Helen Jablonski" class="memorial-img">
+                </a>
+                <h2>Helen Jablonski</h2>
+                <p class="years">1917 - 2014</p>
+                <p>Helen Evelyn (Zydek) Jablonski passed away Monday, March 03, 2014, at the age of 97. As she desired, Helen spent her last days surrounded by her family and friends in her home <a href="https://www.peoplecareinc.org/2014/03/03/helen-jablonski-1917-2014/">[read more...]</a></p>
             </div>
         </div>
     </section>
 
-    <section class="story">
-        <div class="story-content">
+    <!-- You'll be amazed what can start with one call -->
+    <section class="section-light">
+        <div class="content-section">
+            <h1>You'll be amazed what can</h1>
+            <h2>start with one call</h2>
+            <p>What can one hour mean? To a PeopleCare client it can mean a doctor's appointment on time, a filled prescription, or three hotels on boardwalk. To a PeopleCare volunteer it's seeing the amazing difference their time can make. Every hour is precious. At PeopleCare we think that's the most important lesson of all.</p>
+            <p><strong>To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" class="phone-link">(708) 442-1223</a>.</strong></p>
+            
+            <div class="cta-box">
+                <a href="newsletters.html">
+                    <img src="https://www.peoplecareinc.org/wp-content/themes/peoplecare/images/newsletter_top.png" alt="subscribe to our free email newsletter">
+                </a>
+                <a href="donations.html">
+                    <img src="https://www.peoplecareinc.org/wp-content/themes/peoplecare/images/donate.png" alt="make a donation to PeopleCare">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- True Story -->
+    <section class="section-cream">
+        <div class="content-section">
             <h2>True Story</h2>
-            <div class="story-box">
-                <p><span class="initial">E</span>lla from Brookfield was 96 and her family was finding it difficult to get her to daily cancer therapy at Loyola. Making it more difficult: the rides that would be required for six weeks, five days a week. That's 60 rides to coordinate.</p>
-                <p>PeopleCare volunteers to the rescue. Every ride in July and August was scheduled and the team went to work. Jack and Marilyn worked in tandem on Tuesdays and Thursdays. Eileen took Wednesdays. Janet Mondays. Doris, Ann and Ernie filled in wherever they were needed.</p>
-                <p><strong>Ella got to therapy…with a big cheering section.</strong></p>
+            <div class="card">
+                <p><span class="story-initial">E</span>lla from Brookfield was 96 and her family was finding it difficult to get her to daily cancer therapy at Loyola. Making it more difficult: the rides that would be required for six weeks, five days a week. That's 60 rides to coordinate. PeopleCare volunteers to the rescue. Every ride in July and August was scheduled and the team went to work. Jack and Marilyn worked in tandem on Tuesdays and Thursdays. Eileen took Wednesdays. Janet Mondays. Doris, Ann and Ernie filled in wherever they were needed. Ella got to therapy…with a big cheering section.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="memorial">
-        <div class="memorial-content">
-            <div class="memorial-image-wrapper">
-                <img src="https://www.peoplecareinc.org/wp-content/uploads/2010/03/Helen-Jablonski.jpg" alt="Helen Jablonski" class="memorial-image">
-            </div>
-            <h2>Helen Jablonski</h2>
-            <p class="years">1917 - 2014</p>
-            <p>Helen Evelyn (Zydek) Jablonski passed away Monday, March 03, 2014, at the age of 97. As she desired, Helen spent her last days surrounded by her family and friends in her home.</p>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>PeopleCare, Inc.</h3>
-                <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p>Phone: (708) 442-1223</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="get-help.html">Get Help</a>
-                <a href="get-involved.html">Volunteer</a>
-                <a href="donations.html">Donate</a>
-                <a href="about.html">About Us</a>
-            </div>
-            <div class="footer-section">
-                <h3>Our Services</h3>
-                <a href="get-help.html">Friendly Visitors</a>
-                <a href="get-help.html">Transportation</a>
-                <a href="get-help.html">Caregiver Support</a>
-                <a href="get-help.html">Information & Referral</a>
-            </div>
-            <div class="footer-section">
-                <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at (708) 442-1223.</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 PeopleCare Inc. All rights reserved.</p>
-        </div>
+        <p>&copy; 2026 PeopleCare Inc. · 273 Nuttall Road · Riverside, IL 60546 · Phone: <a href="tel:7084421223">(708) 442-1223</a></p>
     </footer>
 
     <script>
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('active');
             }
         });
     </script>
