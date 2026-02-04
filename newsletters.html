@@ -19,11 +19,7 @@
             --text-light: #5A6C7D;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Lato', sans-serif;
@@ -63,9 +59,7 @@
             flex-wrap: wrap;
         }
 
-        .logo-container a {
-            text-decoration: none;
-        }
+        .logo-container a { text-decoration: none; }
 
         .logo-img {
             height: clamp(50px, 10vw, 60px);
@@ -83,11 +77,7 @@
             cursor: pointer;
         }
 
-        nav {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
+        nav { flex: 1; display: flex; justify-content: flex-end; }
 
         nav ul {
             list-style: none;
@@ -117,13 +107,8 @@
             transition: width 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:hover { color: var(--primary); }
+        nav a:hover::after { width: 100%; }
 
         .banner-image {
             width: 100%;
@@ -329,42 +314,13 @@
         }
 
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            nav {
-                display: none;
-                width: 100%;
-                margin-top: 1rem;
-            }
-
-            nav.active {
-                display: block;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0;
-                background: var(--cream);
-                border-radius: 10px;
-                padding: 1rem 0;
-            }
-
-            nav li {
-                width: 100%;
-                text-align: center;
-                border-bottom: 1px solid rgba(91, 155, 213, 0.1);
-            }
-
-            nav li:last-child {
-                border-bottom: none;
-            }
-
-            nav a {
-                display: block;
-                padding: 1rem;
-            }
+            .mobile-menu-btn { display: block; }
+            nav { display: none; width: 100%; margin-top: 1rem; }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 0; background: var(--cream); border-radius: 10px; padding: 1rem 0; }
+            nav li { width: 100%; text-align: center; border-bottom: 1px solid rgba(91, 155, 213, 0.1); }
+            nav li:last-child { border-bottom: none; }
+            nav a { display: block; padding: 1rem; }
         }
     </style>
 </head>
@@ -431,6 +387,25 @@
                 <p>Now it's March and Tony is on his way back to the hospital, sent by the home nurse, because all his blood counts were so low. Evelyn never saw him again…Tony died two days later. A neighbor drove her to the hospital when Evelyn received the call. She said she felt better after she saw him, "because he was still warm."</p>
                 <p>Ange told her we would stay in touch and that we could certainly help her with her own rides to Loyola. She calmed down some…cause Tony always took her.</p>
                 <p>Evelyn called to say she received a very thoughtful sympathy card from PeopleCare.</p>
+            </div>
+
+            <div class="story-card">
+                <h3>Not Now Honey, I'm Playing Bingo</h3>
+                <p>Trudy lived in The British Home and was pretty spunky for her 91 years. Her friend and PeopleCare volunteer, Carol would visit her from time to time to talk. Trudy always looked forward to the visits, as did Carol, who maintains she gained as much from the visits as Trudy did.</p>
+                <p>This day was a special visit. It was Christmas morning and Carol had gone to midnight Mass the night before. She had a special feeling the warmth in her heart. One thing kept tugging at her though…Trudy…visit Trudy.</p>
+                <p>So she did. She found Trudy in her room. When she realized Carol was there, she said, " I prayed that you would visit today. " Trudy was not doing well. They talked…reminisced…it was nice to have a friend. What a nice morning.</p>
+                <p>The next time, just after the holidays Carol visited again. This time Trudy wasn't in her room. Concerned, Carol looked everywhere, finally finding her, wheelchair and all, in the lounge playing bingo.</p>
+                <p>Relieved, Carol stopped in and said, "Hi Trudy, how are you doing?"</p>
+                <p>Trudy bubbled, "Not now , Honey, I'm playing bingo!"</p>
+                <p>After a laugh of disbelief, Carol sat and waited for a few minutes as the game finished. She and Trudy then talked for about an hour about her sudden energy. Trudy remarked that she was still waiting for the Polident Carol had promised to bring at Christmas. Trudy also couldn't remember her birthday, which Carol reminded her was May 13th, when she'd be 92.</p>
+                <p>When Carol called Alice the next morning to check in…she got word that Trudy had died during the night. She had been able to see her friend for the last time. Carol still misses Trudy.</p>
+            </div>
+
+            <div class="story-card">
+                <h3>Sometimes the Rules Don't Count</h3>
+                <p>Sometimes you never know where the help will be needed. A PeopleCare volunteer had been visiting Phyllis, an 80 year old with Alzheimers. One particular visit she seemed especially agitated and upset. When asked if there was anything wrong she indicated that her daughter, Ellen, 51, had been diagnosed with cancer and was having a very difficult time coping with her treatments. Ellen was growing weaker every day and could no longer drive or help her mother. Who would be able to help?</p>
+                <p>Although the daughter was not over 65 we felt we could help because we were already helping her mother and helping one meant helping both. We were able to drive Mary Ann to her treatments and a member of our staff did a lot of listening and hand holding, in addition to working with Community Care Options, making both of them as comfortable as possible.</p>
+                <p>Ellen died in May of that year and her mother died in the British Home in November of same year. One of our staff attended the visitations and services.</p>
             </div>
 
             <div class="story-card">
