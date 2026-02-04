@@ -239,12 +239,6 @@
             margin-bottom: 1rem;
         }
 
-        .memorial-box a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
         /* Story Initial Letter */
         .story-initial {
             font-size: 3.5rem;
@@ -289,6 +283,20 @@
 
         .phone-link:hover {
             text-decoration: underline;
+        }
+
+        .section-blue .phone-link {
+            color: var(--white);
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        .section-blue .phone-link:hover {
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
         }
 
         /* Footer */
@@ -378,14 +386,6 @@
 
     <img src="PeopleCareImg.png" alt="The Power of an Hour - PeopleCare" class="banner-image">
 
-    <!-- COVID-19 Update -->
-    <section class="section-blue">
-        <div class="content-section">
-            <h2>COVID-19 Update</h2>
-            <p>We have weathered the worst of the storm <strong>together</strong>! PeopleCare, Inc. is back to providing our regular services following the CDC and IDPH guidelines, and this includes <strong>TRANSPORTATION</strong>. We are continuing our telephone reassurance calls as these have formed new friendships! We will also continue to make no contact delivery of groceries and medications for those in need. Please do not hesitate to reach out to us if you have any questions, or would like to schedule a service. Watch for more information about our newest program, Telemedicine, where we bring your doctor's appointment directly to you in your home. We are looking forward to supporting our seniors in our neighborhood as we have done so for the last 30 years.</p>
-        </div>
-    </section>
-
     <!-- How we touch people's lives -->
     <section class="section-light">
         <div class="content-section">
@@ -410,12 +410,10 @@
     <section class="section-cream">
         <div class="content-section">
             <div class="memorial-box">
-                <a href="https://www.peoplecareinc.org/2014/03/03/helen-jablonski-1917-2014/">
-                    <img src="https://www.peoplecareinc.org/wp-content/uploads/2010/03/Helen-Jablonski.jpg" alt="Helen Jablonski" class="memorial-img">
-                </a>
+                <img src="https://www.peoplecareinc.org/wp-content/uploads/2010/03/Helen-Jablonski.jpg" alt="Helen Jablonski" class="memorial-img">
                 <h2>Helen Jablonski</h2>
                 <p class="years">1917 - 2014</p>
-                <p>Helen Evelyn (Zydek) Jablonski passed away Monday, March 03, 2014, at the age of 97. As she desired, Helen spent her last days surrounded by her family and friends in her home <a href="https://www.peoplecareinc.org/2014/03/03/helen-jablonski-1917-2014/">[read more...]</a></p>
+                <p>Helen Evelyn (Zydek) Jablonski passed away Monday, March 03, 2014, at the age of 97. As she desired, Helen spent her last days surrounded by her family and friends in her home.</p>
             </div>
         </div>
     </section>
@@ -446,6 +444,15 @@
             <div class="card">
                 <p><span class="story-initial">E</span>lla from Brookfield was 96 and her family was finding it difficult to get her to daily cancer therapy at Loyola. Making it more difficult: the rides that would be required for six weeks, five days a week. That's 60 rides to coordinate. PeopleCare volunteers to the rescue. Every ride in July and August was scheduled and the team went to work. Jack and Marilyn worked in tandem on Tuesdays and Thursdays. Eileen took Wednesdays. Janet Mondays. Doris, Ann and Ernie filled in wherever they were needed. Ella got to therapy…with a big cheering section.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- COVID-19 Update (moved down) -->
+    <section class="section-blue">
+        <div class="content-section">
+            <h2>COVID-19 Update</h2>
+            <p>We have weathered the worst of the storm <strong>together</strong>! PeopleCare, Inc. is back to providing our regular services following the CDC and IDPH guidelines, and this includes <strong>TRANSPORTATION</strong>. We are continuing our telephone reassurance calls as these have formed new friendships! We will also continue to make no contact delivery of groceries and medications for those in need. Please do not hesitate to reach out to us if you have any questions, or would like to schedule a service. Watch for more information about our newest program, Telemedicine, where we bring your doctor's appointment directly to you in your home. We are looking forward to supporting our seniors in our neighborhood as we have done so for the last 30 years.</p>
+            <p style="margin-top: 1.5rem;"><strong>Call us at <a href="tel:7084421223" class="phone-link">(708) 442-1223</a></strong></p>
         </div>
     </section>
 
