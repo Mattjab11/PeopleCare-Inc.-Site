@@ -1,4 +1,4 @@
-fho<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,6 +62,10 @@ fho<!DOCTYPE html>
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+        }
+
+        .logo-container a {
+            text-decoration: none;
         }
 
         .logo-img {
@@ -366,12 +370,14 @@ fho<!DOCTYPE html>
         </div>
         <div class="header-content">
             <div class="logo-container">
-                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                <a href="index.html">
+                    <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                </a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
                     <li><a href="get-help.html">Get Help</a></li>
                     <li><a href="get-involved.html">Get Involved</a></li>
@@ -389,8 +395,7 @@ fho<!DOCTYPE html>
     <!-- How we touch people's lives -->
     <section class="section-light">
         <div class="content-section">
-            <h1>How we touch</h1>
-            <h2>people's lives</h2>
+            <h1>How we touch people's lives</h1>
             <div class="two-column">
                 <div>
                     <p>Need always appears to be so overwhelming. Yet in our experience, it begins to cower in the face of a simple smile. It flinches when a hand takes an elbow. Fact is, PeopleCare people, our clients, live with need every day and our volunteers face it down armed with little more than car keys or a telephone or a hot meal.</p>
@@ -421,8 +426,7 @@ fho<!DOCTYPE html>
     <!-- You'll be amazed what can start with one call -->
     <section class="section-light">
         <div class="content-section">
-            <h1>You'll be amazed what can</h1>
-            <h2>start with one call</h2>
+            <h1>You'll be amazed what can start with one call</h1>
             <p>What can one hour mean? To a PeopleCare client it can mean a doctor's appointment on time, a filled prescription, or three hotels on boardwalk. To a PeopleCare volunteer it's seeing the amazing difference their time can make. Every hour is precious. At PeopleCare we think that's the most important lesson of all.</p>
             <p><strong>To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" class="phone-link">(708) 442-1223</a>.</strong></p>
             
@@ -447,7 +451,7 @@ fho<!DOCTYPE html>
         </div>
     </section>
 
-    <!-- COVID-19 Update (moved down) -->
+    <!-- COVID-19 Update -->
     <section class="section-blue">
         <div class="content-section">
             <h2>COVID-19 Update</h2>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletters : PeopleCare, Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5B9BD5;
+            --primary-dark: #4A7FB8;
+            --accent: #8EC4E8;
+            --light-blue: #B8D9F0;
+            --cream: #F5F9FC;
+            --white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-light: #5A6C7D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(91, 155, 213, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 0.8rem 0;
+            text-align: center;
+        }
+
+        .header-top a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-container a {
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: clamp(50px, 10vw, 60px);
+            width: auto;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: clamp(1rem, 3vw, 2rem);
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(3rem, 6vw, 5rem) 2rem;
+        }
+
+        .page-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .signup-box {
+            background: linear-gradient(135deg, var(--accent), var(--light-blue));
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(91, 155, 213, 0.2);
+        }
+
+        .signup-box h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .signup-box p {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .signup-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--white);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(91, 155, 213, 0.2);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .section-heading {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin: 4rem 0 2rem;
+            font-weight: 700;
+        }
+
+        .stories-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .story-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(91, 155, 213, 0.12);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(91, 155, 213, 0.18);
+        }
+
+        .story-card h3 {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .story-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .story-initial {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+        }
+
+        .archives-section {
+            background: var(--cream);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 4rem 0;
+        }
+
+        .archives-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .archives-section h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            font-weight: 700;
+        }
+
+        .archives-list {
+            list-style: none;
+        }
+
+        .archives-list li {
+            margin-bottom: 0.8rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .archives-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 15px rgba(91, 155, 213, 0.15);
+        }
+
+        .archives-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .archives-list a:hover {
+            color: var(--primary-dark);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--light-blue);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                background: var(--cream);
+                border-radius: 10px;
+                padding: 1rem 0;
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(91, 155, 213, 0.1);
+            }
+
+            nav li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="tel:7084421223">📞 Call Us: (708) 442-1223</a>
+        </div>
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <img src="PeopleCareImg.png" alt="The Power of an Hour - PeopleCare" class="banner-image">
+
+    <section class="content-section">
+        <h1 class="page-title">Newsletters</h1>
+
+        <p class="intro-text">Please sign up for our free email newsletter, <em>outside in</em>.</p>
+
+        <!-- Newsletter Signup -->
+        <div class="signup-box">
+            <h2>Sign Up for Our Newsletter</h2>
+            <p>Subscribe to receive <em>outside in</em>, our free email newsletter with stories and updates from PeopleCare.</p>
+            <form class="signup-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                </div>
+                <button type="submit" class="submit-btn">Subscribe Now</button>
+            </form>
+        </div>
+
+        <!-- PeopleCare Stories -->
+        <h2 class="section-heading">PeopleCare Stories</h2>
+        
+        <div class="stories-grid">
+            <div class="story-card">
+                <h3>Keep PeopleCare in the Wings</h3>
+                <p>Evelyn (81) called PeopleCare to inquire about taking her husband, Tony, to MacNeal Hospital for cancer treatments in the event he was not able to drive himself. He had recently been diagnosed with lymphoma. Ange assured her we could help out and spent most of that first phone call just listening. Evelyn was distraught about her husband, even as her own health deteriorated. They have one daughter, in Northern Wisconsin, she must work, so they had no help close at hand.</p>
+                <p>She began calling PeopleCare just to talk and tell us about Tony's condition. Ange gave Evelyn her home phone number because she was afraid what they might do if they couldn't find a ride on the weekend. The phone became Evelyn's security blanket…she would call 2 or 3 times per week. In November Tony changed doctors and began going to Northwestern. He continued to drive himself for treatments until he eventually became too weak, at which time, Northwestern sent a hospital courtesy car to pick him up for treatments and doctor visits, as well as frequent hospitalizations.</p>
+                <p>Evelyn called just to talk and "to keep PeopleCare in the wings in case she needed us." Ange referred her to SW Suburban Center on Aging to help answer questions about nursing homes and home healthcare. Evelyn became very upset because she couldn't afford any help.</p>
+                <p>It was the end of February and Tony's doctors finally hospitalized him and told Evelyn it probably wouldn't be long before Tony could no longer fight the fight. Their daughter came to stay with them for 4-5 days…but Tony lingered and their daughter had to return home.</p>
+                <p>Evelyn was alone again and asked if Shepherds could drive her to Northwestern to see Tony. Although we don't normally do that, we bent the rules so she could see him before he died. We were lucky…Ken Mooney said yes and drove her one day. Harold Verdak, another Shepherds volunteer said he'd take her the following week. Believe it or not, Tony was sent home. Evelyn called Ange practically everyday even though a home health nurse came daily. Ange also continued giving her numbers to call…SW Suburban Council on Aging, Staying-At-Home and more.</p>
+                <p>Now it's March and Tony is on his way back to the hospital, sent by the home nurse, because all his blood counts were so low. Evelyn never saw him again…Tony died two days later. A neighbor drove her to the hospital when Evelyn received the call. She said she felt better after she saw him, "because he was still warm."</p>
+                <p>Ange told her we would stay in touch and that we could certainly help her with her own rides to Loyola. She calmed down some…cause Tony always took her.</p>
+                <p>Evelyn called to say she received a very thoughtful sympathy card from PeopleCare.</p>
+            </div>
+
+            <div class="story-card">
+                <h3>True Story</h3>
+                <p><span class="story-initial">E</span>lla from Brookfield was 96 and her family was finding it difficult to get her to daily cancer therapy at Loyola. Making it more difficult: the rides that would be required for six weeks, five days a week. That's 60 rides to coordinate. PeopleCare volunteers to the rescue. Every ride in July and August was scheduled and the team went to work. Jack and Marilyn worked in tandem on Tuesdays and Thursdays. Eileen took Wednesdays. Janet Mondays. Doris, Ann and Ernie filled in wherever they were needed. Ella got to therapy…with a big cheering section.</p>
+            </div>
+
+            <div class="story-card">
+                <h3>One Call</h3>
+                <p>What can one hour mean? To a PeopleCare client it can mean a doctor's appointment on time, a filled prescription, or three hotels on boardwalk. To a PeopleCare volunteer it's seeing the amazing difference their time can make. Every hour is precious. At PeopleCare we think that's the most important lesson of all.</p>
+                <p><strong>To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" style="color: var(--primary);">(708) 442-1223</a>.</strong></p>
+            </div>
+        </div>
+
+        <!-- Newsletter Archives -->
+        <div class="archives-section">
+            <h2>Newsletter Archives</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-light);">You can download a copy of our newsletter, <em>outside in</em>, right here:</p>
+
+            <h3>Current</h3>
+            <ul class="archives-list">
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/03/Q1-2011-volunteer.pdf" target="_blank">January, February, March 2011 (PDF 387 KB)</a></li>
+            </ul>
+
+            <h3>Previous</h3>
+            <ul class="archives-list">
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/03/Q4-2010-volunteer.pdf" target="_blank">October, November, December 2010 (PDF 786 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/03/Q3-2010-volunteer.pdf" target="_blank">July, August, September 2010 (PDF 731 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q2-2010-Volunteer.pdf" target="_blank">April, May, June 2010 (PDF 977 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q1-2010-Volunteer.pdf" target="_blank">January, February, March 2010 (PDF 542 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q4-2009-Volunteer.pdf" target="_blank">October, November, December 2009 (PDF 782 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q3-2009-Volunteer.pdf" target="_blank">July, August, September 2009 (PDF 584 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q2-2009-Volunteer.pdf" target="_blank">April, May, June 2009 (PDF 691 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q1-2009-Volunteer.pdf" target="_blank">January, February, March 2009 (PDF 450 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q4-2008-Volunteer.pdf" target="_blank">October, November, December 2008 (PDF 607 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q3-2008-Volunteer.pdf" target="_blank">July, August, September 2008 (PDF 698 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q2-2008-Volunteer.pdf" target="_blank">April, May, June 2008 (PDF 406 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q1-2008-Volunteer.pdf" target="_blank">January, February, March 2008 (PDF 803 KB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q4-2007-Volunteer.pdf" target="_blank">October, November, December 2007 (PDF 2.5 MB)</a></li>
+                <li><a href="https://peoplecareinc.org/wp-content/uploads/2010/04/Q3-2007-Volunteer.pdf" target="_blank">July, August, September 2007 (PDF 7.1 MB, might take a minute to download)</a></li>
+            </ul>
+
+            <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-light);">
+                <img src="https://peoplecareinc.org/wp-content/themes/peoplecare/images/get-acrobat-reader.gif" alt="Adobe Reader" style="vertical-align: middle; margin-right: 0.5rem;">
+                You will need the free <a href="http://www.adobe.com/products/acrobat/readstep2.html" target="_blank" style="color: var(--primary);">Adobe Acrobat Reader</a> to view our newsletters.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 PeopleCare Inc. · 273 Nuttall Road · Riverside, IL 60546 · Phone: <a href="tel:7084421223">(708) 442-1223</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = event.target.elements.name.value;
+            const email = event.target.elements.email.value;
+            
+            alert(`Thank you for subscribing, ${name}! We'll send our newsletter to ${email}.`);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
