@@ -19,6 +19,34 @@
         .cta h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
         .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
         .cta .phone:hover { background: var(--white); color: var(--primary); }
+
+        /* --- Added: Board, Staff, Impact, Testimonials --- */
+        .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--primary); margin: 3.5rem 0 1.75rem; font-weight: 700; text-align: center; }
+        .people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.75rem; }
+        .person-card { background: var(--white); border-radius: 16px; padding: 1.75rem 1.25rem; text-align: center; box-shadow: 0 8px 25px rgba(91, 155, 213, 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .person-card:hover { transform: translateY(-6px); box-shadow: 0 14px 35px rgba(91, 155, 213, 0.18); }
+        .person-avatar { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 1rem; display: block; box-shadow: 0 6px 18px rgba(91, 155, 213, 0.25); border: 3px solid var(--white); }
+        .person-name { font-weight: 700; color: var(--text-dark); font-size: 1.05rem; margin-bottom: 0.25rem; }
+        .person-title { color: var(--primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .person-bio { color: var(--text-light); font-size: 0.85rem; line-height: 1.6; }
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
+        .impact-card { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white); border-radius: 16px; padding: 2rem 1.5rem; text-align: center; }
+        .impact-number { font-size: clamp(2.2rem, 6vw, 3rem); font-weight: 900; line-height: 1; margin-bottom: 0.5rem; }
+        .impact-label { font-size: 0.95rem; opacity: 0.95; }
+        .impact-card.placeholder { background: var(--white); border: 2px dashed var(--primary); color: var(--primary); }
+        .impact-card.placeholder .impact-number { color: var(--primary); }
+        .impact-card.placeholder .impact-label { color: var(--text-light); }
+        .tally-box { background: var(--cream); border-radius: 18px; padding: 2.5rem; text-align: center; border: 2px solid var(--light-blue); }
+        .tally-box .impact-number { color: var(--primary); font-size: clamp(2.5rem, 7vw, 3.5rem); }
+        .tally-box .impact-label { color: var(--text-light); font-size: 1rem; margin-top: 0.5rem; }
+        .tally-note { font-size: 0.85rem; color: var(--text-light); margin-top: 1rem; font-style: italic; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.75rem; }
+        .testimonial-card { background: var(--white); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(91, 155, 213, 0.1); border-top: 4px solid var(--accent); }
+        .testimonial-quote { color: var(--text-dark); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; font-style: italic; }
+        .testimonial-quote::before { content: "\201C"; color: var(--primary); font-size: 1.5rem; font-weight: 900; }
+        .testimonial-quote::after { content: "\201D"; color: var(--primary); font-size: 1.5rem; font-weight: 900; }
+        .testimonial-attribution { color: var(--primary); font-weight: 700; font-size: 0.9rem; }
+        .sample-tag { display: inline-block; background: var(--cream); color: var(--text-light); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 6px; margin-bottom: 0.75rem; }
     </style>
 </head>
 <body>
@@ -68,6 +96,134 @@
             <p>Give us a call or visit our contact page</p>
             <a href="tel:7084421223" class="phone">(708) 442-1223</a>
         </div>
+
+        <!-- ============ Added: Our Impact ============ -->
+        <h2 class="section-title">Our Impact</h2>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-number">2,500+</div>
+                <div class="impact-label">Calls for help answered last year</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-number">1,700+</div>
+                <div class="impact-label">Clients served annually</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-number">30+</div>
+                <div class="impact-label">Years serving our neighbors</div>
+            </div>
+            <div class="impact-card placeholder">
+                <div class="impact-number">—</div>
+                <div class="impact-label">Add another stat here (e.g. rides given, volunteer hours)</div>
+            </div>
+        </div>
+
+        <!-- ============ Added: 2026 running tally ============
+             You mentioned being on the fence about this one — it's kept as
+             its own clearly-marked block so it's a one-step delete if you
+             decide against it. As a static site with no database, the
+             number is entered by hand rather than updating itself. -->
+        <h2 class="section-title">2026 So Far</h2>
+        <div class="tally-box">
+            <div class="impact-number">1,842</div>
+            <div class="impact-label">People helped in 2026 (as of August 1)</div>
+            <p class="tally-note">Updated by hand periodically — not a live counter. Delete this block if you'd rather not track a running tally.</p>
+        </div>
+        <!-- ============ End 2026 running tally ============ -->
+
+        <!-- ============ Added: Board of Directors ============ -->
+        <h2 class="section-title">Board of Directors</h2>
+        <p style="text-align:center;color:var(--text-light);max-width:700px;margin:-1rem auto 2rem;">Photos below are placeholder avatars — send us real headshots any time and we'll swap them in.</p>
+        <div class="people-grid">
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Mary+Coonda&background=5B9BD5&color=fff&size=200&bold=true" alt="Mary Coonda">
+                <div class="person-name">Mary Coonda</div>
+                <div class="person-title">President</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Joseph+Skaggs&background=5B9BD5&color=fff&size=200&bold=true" alt="Joseph Skaggs Jr.">
+                <div class="person-name">Joseph Skaggs Jr.</div>
+                <div class="person-title">Vice President & Secretary</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Tom+Piette&background=5B9BD5&color=fff&size=200&bold=true" alt="Tom Piette">
+                <div class="person-name">Tom Piette</div>
+                <div class="person-title">Treasurer</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Russell+Jablonski&background=8EC4E8&color=fff&size=200&bold=true" alt="Russell Jablonski">
+                <div class="person-name">Russell Jablonski</div>
+                <div class="person-title">Board Member</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Bruce+Jablonski&background=8EC4E8&color=fff&size=200&bold=true" alt="Bruce Jablonski">
+                <div class="person-name">Bruce Jablonski</div>
+                <div class="person-title">Board Member</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Brian+Kuratko&background=8EC4E8&color=fff&size=200&bold=true" alt="Brian Kuratko">
+                <div class="person-name">Brian Kuratko</div>
+                <div class="person-title">Board Member</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Lorraine+Marek&background=8EC4E8&color=fff&size=200&bold=true" alt="Lorraine Marek">
+                <div class="person-name">Lorraine Marek</div>
+                <div class="person-title">Board Member</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Ita+Sih&background=8EC4E8&color=fff&size=200&bold=true" alt="Dr. Ita Sih">
+                <div class="person-name">Dr. Ita Sih</div>
+                <div class="person-title">Board Member</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Jean+Vondriska&background=8EC4E8&color=fff&size=200&bold=true" alt="Jean Vondriska">
+                <div class="person-name">Jean Vondriska</div>
+                <div class="person-title">Board Member</div>
+            </div>
+        </div>
+
+        <!-- ============ Added: Our Staff ============ -->
+        <h2 class="section-title">Our Staff</h2>
+        <div class="people-grid">
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Judy+Mantel&background=4A7FB8&color=fff&size=200&bold=true" alt="Judy Mantel">
+                <div class="person-name">Judy Mantel</div>
+                <div class="person-title">Executive Director</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Diane+Chaney&background=4A7FB8&color=fff&size=200&bold=true" alt="Diane Chaney">
+                <div class="person-name">Diane Chaney</div>
+                <div class="person-title">Financial Director</div>
+                <div class="person-bio">A retired physician with an undergraduate background in finance.</div>
+            </div>
+            <div class="person-card">
+                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Peggy+Devlin&background=4A7FB8&color=fff&size=200&bold=true" alt="Peggy Devlin">
+                <div class="person-name">Peggy Devlin</div>
+                <div class="person-title">Transportation Coordinator</div>
+                <div class="person-bio">Joined the staff after volunteering with PeopleCare.</div>
+            </div>
+        </div>
+
+        <!-- ============ Added: Testimonials ============ -->
+        <h2 class="section-title">What Families Say</h2>
+        <p style="text-align:center;color:var(--text-light);max-width:700px;margin:-1rem auto 2rem;">The quotes below are placeholders. Swap in real testimonials once you've collected a few — it's best to get a client or family member's OK before publishing their name.</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <span class="sample-tag">Sample</span>
+                <p class="testimonial-quote">Our volunteer driver never once made my mother feel like a burden. She looked forward to those rides more than the appointments themselves.</p>
+                <p class="testimonial-attribution">— Family member, Riverside</p>
+            </div>
+            <div class="testimonial-card">
+                <span class="sample-tag">Sample</span>
+                <p class="testimonial-quote">Just having someone to talk to every week made all the difference during a very isolating year.</p>
+                <p class="testimonial-attribution">— PeopleCare client, Brookfield</p>
+            </div>
+            <div class="testimonial-card">
+                <span class="sample-tag">Sample</span>
+                <p class="testimonial-quote">I didn't know where to turn for groceries and prescriptions. One phone call and PeopleCare took care of the rest.</p>
+                <p class="testimonial-attribution">— PeopleCare client, LaGrange Park</p>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -112,5 +268,6 @@
             }
         });
     </script>
+    <script src="volunteer-modal.js"></script>
 </body>
 </html>
