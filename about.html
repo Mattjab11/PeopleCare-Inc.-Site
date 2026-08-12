@@ -20,7 +20,7 @@
         .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
         .cta .phone:hover { background: var(--white); color: var(--primary); }
 
-        /* --- Added: Board, Staff, Impact, Testimonials --- */
+        /* --- Added: Board, Staff, Impact, Testimonials (content pulled from site-data.js) --- */
         .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--primary); margin: 3.5rem 0 1.75rem; font-weight: 700; text-align: center; }
         .people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.75rem; }
         .person-card { background: var(--white); border-radius: 16px; padding: 1.75rem 1.25rem; text-align: center; box-shadow: 0 8px 25px rgba(91, 155, 213, 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease; }
@@ -51,21 +51,22 @@
 </head>
 <body>
     <header>
-        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
+        <div class="header-top"><a href="tel:7084421223" data-pc="phone-href">📞 Call Us: <span data-pc="phone-text">(708) 442-1223</span></a></div>
         <div class="header-content">
             <div class="logo-container">
-                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                <a href="index.html"><img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img"></a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
             <nav id="mainNav">
-                <ul>
+                <ul id="navList">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="get-help.html">Get Help</a></li>
-                    <li><a href="get-involved.html">About Us</a></li>
-                    <li><a href="donations.html">Donations</a></li>
-                    <li><a href="about.html">About Us</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -94,136 +95,31 @@
         <div class="cta">
             <h2>Ready to About Us?</h2>
             <p>Give us a call or visit our contact page</p>
-            <a href="tel:7084421223" class="phone">(708) 442-1223</a>
+            <a href="tel:7084421223" class="phone" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>
         </div>
 
-        <!-- ============ Added: Our Impact ============ -->
+        <!-- ============ Below this point, content comes from site-data.js ============
+             To update board members, staff, impact numbers, the running tally,
+             or testimonials, edit site-data.js — not this file. -->
         <h2 class="section-title">Our Impact</h2>
-        <div class="impact-grid">
-            <div class="impact-card">
-                <div class="impact-number">2,500+</div>
-                <div class="impact-label">Calls for help answered last year</div>
-            </div>
-            <div class="impact-card">
-                <div class="impact-number">1,700+</div>
-                <div class="impact-label">Clients served annually</div>
-            </div>
-            <div class="impact-card">
-                <div class="impact-number">30+</div>
-                <div class="impact-label">Years serving our neighbors</div>
-            </div>
-            <div class="impact-card placeholder">
-                <div class="impact-number">—</div>
-                <div class="impact-label">Add another stat here (e.g. rides given, volunteer hours)</div>
-            </div>
+        <div class="impact-grid" id="impactGrid"></div>
+
+        <div id="tallySection">
+            <h2 class="section-title">2026 So Far</h2>
+            <div class="tally-box" id="tallyBox"></div>
         </div>
 
-        <!-- ============ Added: 2026 running tally ============
-             You mentioned being on the fence about this one — it's kept as
-             its own clearly-marked block so it's a one-step delete if you
-             decide against it. As a static site with no database, the
-             number is entered by hand rather than updating itself. -->
-        <h2 class="section-title">2026 So Far</h2>
-        <div class="tally-box">
-            <div class="impact-number">1,842</div>
-            <div class="impact-label">People helped in 2026 (as of August 1)</div>
-            <p class="tally-note">Updated by hand periodically — not a live counter. Delete this block if you'd rather not track a running tally.</p>
-        </div>
-        <!-- ============ End 2026 running tally ============ -->
-
-        <!-- ============ Added: Board of Directors ============ -->
         <h2 class="section-title">Board of Directors</h2>
-        <p style="text-align:center;color:var(--text-light);max-width:700px;margin:-1rem auto 2rem;">Photos below are placeholder avatars — send us real headshots any time and we'll swap them in.</p>
-        <div class="people-grid">
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Mary+Coonda&background=5B9BD5&color=fff&size=200&bold=true" alt="Mary Coonda">
-                <div class="person-name">Mary Coonda</div>
-                <div class="person-title">President</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Joseph+Skaggs&background=5B9BD5&color=fff&size=200&bold=true" alt="Joseph Skaggs Jr.">
-                <div class="person-name">Joseph Skaggs Jr.</div>
-                <div class="person-title">Vice President & Secretary</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Tom+Piette&background=5B9BD5&color=fff&size=200&bold=true" alt="Tom Piette">
-                <div class="person-name">Tom Piette</div>
-                <div class="person-title">Treasurer</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Russell+Jablonski&background=8EC4E8&color=fff&size=200&bold=true" alt="Russell Jablonski">
-                <div class="person-name">Russell Jablonski</div>
-                <div class="person-title">Board Member</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Bruce+Jablonski&background=8EC4E8&color=fff&size=200&bold=true" alt="Bruce Jablonski">
-                <div class="person-name">Bruce Jablonski</div>
-                <div class="person-title">Board Member</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Brian+Kuratko&background=8EC4E8&color=fff&size=200&bold=true" alt="Brian Kuratko">
-                <div class="person-name">Brian Kuratko</div>
-                <div class="person-title">Board Member</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Lorraine+Marek&background=8EC4E8&color=fff&size=200&bold=true" alt="Lorraine Marek">
-                <div class="person-name">Lorraine Marek</div>
-                <div class="person-title">Board Member</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Ita+Sih&background=8EC4E8&color=fff&size=200&bold=true" alt="Dr. Ita Sih">
-                <div class="person-name">Dr. Ita Sih</div>
-                <div class="person-title">Board Member</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Jean+Vondriska&background=8EC4E8&color=fff&size=200&bold=true" alt="Jean Vondriska">
-                <div class="person-name">Jean Vondriska</div>
-                <div class="person-title">Board Member</div>
-            </div>
-        </div>
+        <p style="text-align:center;color:var(--text-light);max-width:700px;margin:-1rem auto 2rem;">Photos below are placeholder avatars — add a photo file name in site-data.js and we'll use it instead.</p>
+        <div class="people-grid" id="boardGrid"></div>
 
-        <!-- ============ Added: Our Staff ============ -->
         <h2 class="section-title">Our Staff</h2>
-        <div class="people-grid">
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Judy+Mantel&background=4A7FB8&color=fff&size=200&bold=true" alt="Judy Mantel">
-                <div class="person-name">Judy Mantel</div>
-                <div class="person-title">Executive Director</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Diane+Chaney&background=4A7FB8&color=fff&size=200&bold=true" alt="Diane Chaney">
-                <div class="person-name">Diane Chaney</div>
-                <div class="person-title">Financial Director</div>
-                <div class="person-bio">A retired physician with an undergraduate background in finance.</div>
-            </div>
-            <div class="person-card">
-                <img class="person-avatar" src="https://ui-avatars.com/api/?name=Peggy+Devlin&background=4A7FB8&color=fff&size=200&bold=true" alt="Peggy Devlin">
-                <div class="person-name">Peggy Devlin</div>
-                <div class="person-title">Transportation Coordinator</div>
-                <div class="person-bio">Joined the staff after volunteering with PeopleCare.</div>
-            </div>
-        </div>
+        <div class="people-grid" id="staffGrid"></div>
 
-        <!-- ============ Added: Testimonials ============ -->
         <h2 class="section-title">What Families Say</h2>
-        <p style="text-align:center;color:var(--text-light);max-width:700px;margin:-1rem auto 2rem;">The quotes below are placeholders. Swap in real testimonials once you've collected a few — it's best to get a client or family member's OK before publishing their name.</p>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <span class="sample-tag">Sample</span>
-                <p class="testimonial-quote">Our volunteer driver never once made my mother feel like a burden. She looked forward to those rides more than the appointments themselves.</p>
-                <p class="testimonial-attribution">— Family member, Riverside</p>
-            </div>
-            <div class="testimonial-card">
-                <span class="sample-tag">Sample</span>
-                <p class="testimonial-quote">Just having someone to talk to every week made all the difference during a very isolating year.</p>
-                <p class="testimonial-attribution">— PeopleCare client, Brookfield</p>
-            </div>
-            <div class="testimonial-card">
-                <span class="sample-tag">Sample</span>
-                <p class="testimonial-quote">I didn't know where to turn for groceries and prescriptions. One phone call and PeopleCare took care of the rest.</p>
-                <p class="testimonial-attribution">— PeopleCare client, LaGrange Park</p>
-            </div>
-        </div>
+        <p style="text-align:center;color:var(--text-light);max-width:700px;margin:-1rem auto 2rem;">The quotes below are placeholders — swap in real testimonials in site-data.js once you've collected a few (with permission to use the name/town).</p>
+        <div class="testimonial-grid" id="testimonialGrid"></div>
+        <!-- ============ End site-data.js-driven content ============ -->
     </section>
 
     <footer>
@@ -231,7 +127,7 @@
             <div class="footer-section">
                 <h3>PeopleCare, Inc.</h3>
                 <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
+                <p><a href="tel:7084421223" data-pc="phone-href">Phone: <span data-pc="phone-text">(708) 442-1223</span></a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -249,7 +145,7 @@
             </div>
             <div class="footer-section">
                 <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>.</p>
             </div>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
@@ -268,6 +164,8 @@
             }
         });
     </script>
+    <script src="site-data.js"></script>
+    <script src="site-render.js"></script>
     <script src="volunteer-modal.js"></script>
 </body>
 </html>

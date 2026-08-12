@@ -23,21 +23,22 @@
 </head>
 <body>
     <header>
-        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
+        <div class="header-top"><a href="tel:7084421223" data-pc="phone-href">📞 Call Us: <span data-pc="phone-text">(708) 442-1223</span></a></div>
         <div class="header-content">
             <div class="logo-container">
-                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                <a href="index.html"><img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img"></a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
             <nav id="mainNav">
-                <ul>
+                <ul id="navList">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="get-help.html">Get Help</a></li>
-                    <li><a href="get-involved.html">HOTH Endowment</a></li>
-                    <li><a href="donations.html">Donations</a></li>
-                    <li><a href="about.html">About Us</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -66,7 +67,7 @@
         <div class="cta">
             <h2>Ready to HOTH Endowment?</h2>
             <p>Give us a call or visit our contact page</p>
-            <a href="tel:7084421223" class="phone">(708) 442-1223</a>
+            <a href="tel:7084421223" class="phone" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>
         </div>
     </section>
 
@@ -75,7 +76,7 @@
             <div class="footer-section">
                 <h3>PeopleCare, Inc.</h3>
                 <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
+                <p><a href="tel:7084421223" data-pc="phone-href">Phone: <span data-pc="phone-text">(708) 442-1223</span></a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -93,7 +94,7 @@
             </div>
             <div class="footer-section">
                 <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>.</p>
             </div>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
@@ -112,6 +113,8 @@
             }
         });
     </script>
+    <script src="site-data.js"></script>
+    <script src="site-render.js"></script>
     <script src="volunteer-modal.js"></script>
 </body>
 </html>
