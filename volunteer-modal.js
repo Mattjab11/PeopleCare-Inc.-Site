@@ -9,7 +9,7 @@
    the real inbox this should land in.
    ============================================================ */
 (function () {
-    var VOLUNTEER_EMAIL = "volunteer@peoplecareinc.org"; // TODO: confirm real address
+    var VOLUNTEER_EMAIL = "powerofanhour@peoplecareinc.org"; // TODO: confirm real address
 
     var style = document.createElement("style");
     style.textContent = [
