@@ -22,6 +22,7 @@ const PC_SITE = {
   phone: "(708) 442-1223",
   phoneHref: "tel:7084421223",
   address: "273 Nuttall Road, Riverside, IL 60546",
+  email: "powerofanhour@peoplecareinc.org",
 
   // ---------- ONLINE DONATIONS ----------
   // Leave donateUrl as "" until you have a payment link (PayPal.me,
