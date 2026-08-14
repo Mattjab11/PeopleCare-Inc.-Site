@@ -57,7 +57,7 @@ const PC_SITE = {
 
   // ---------- RUNNING TALLY (About page) ----------
   // Set showTally to false to hide this section completely.
-  showTally: true,
+  showTally: false,
   tally: {
     number: "1,842",
     label: "People helped in 2026 (as of August 1)"
