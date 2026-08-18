@@ -19,25 +19,54 @@
         .cta h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
         .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
         .cta .phone:hover { background: var(--white); color: var(--primary); }
+
+        /* --- Added: Board, Staff, Impact, Testimonials (content pulled from site-data.js) --- */
+        .section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--primary); margin: 3.5rem 0 1.75rem; font-weight: 700; text-align: center; }
+        .people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.75rem; }
+        .person-card { background: var(--white); border-radius: 16px; padding: 1.75rem 1.25rem; text-align: center; box-shadow: 0 8px 25px rgba(91, 155, 213, 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .person-card:hover { transform: translateY(-6px); box-shadow: 0 14px 35px rgba(91, 155, 213, 0.18); }
+        .person-avatar { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 1rem; display: block; box-shadow: 0 6px 18px rgba(91, 155, 213, 0.25); border: 3px solid var(--white); }
+        .person-name { font-weight: 700; color: var(--text-dark); font-size: 1.05rem; margin-bottom: 0.25rem; }
+        .person-title { color: var(--primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .person-bio { color: var(--text-light); font-size: 0.85rem; line-height: 1.6; }
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
+        .impact-card { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white); border-radius: 16px; padding: 2rem 1.5rem; text-align: center; }
+        .impact-number { font-size: clamp(2.2rem, 6vw, 3rem); font-weight: 900; line-height: 1; margin-bottom: 0.5rem; }
+        .impact-label { font-size: 0.95rem; opacity: 0.95; }
+        .impact-card.placeholder { background: var(--white); border: 2px dashed var(--primary); color: var(--primary); }
+        .impact-card.placeholder .impact-number { color: var(--primary); }
+        .impact-card.placeholder .impact-label { color: var(--text-light); }
+        .tally-box { background: var(--cream); border-radius: 18px; padding: 2.5rem; text-align: center; border: 2px solid var(--light-blue); }
+        .tally-box .impact-number { color: var(--primary); font-size: clamp(2.5rem, 7vw, 3.5rem); }
+        .tally-box .impact-label { color: var(--text-light); font-size: 1rem; margin-top: 0.5rem; }
+        .tally-note { font-size: 0.85rem; color: var(--text-light); margin-top: 1rem; font-style: italic; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.75rem; }
+        .testimonial-card { background: var(--white); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 25px rgba(91, 155, 213, 0.1); border-top: 4px solid var(--accent); }
+        .testimonial-quote { color: var(--text-dark); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem; font-style: italic; }
+        .testimonial-quote::before { content: "\201C"; color: var(--primary); font-size: 1.5rem; font-weight: 900; }
+        .testimonial-quote::after { content: "\201D"; color: var(--primary); font-size: 1.5rem; font-weight: 900; }
+        .testimonial-attribution { color: var(--primary); font-weight: 700; font-size: 0.9rem; }
+        .sample-tag { display: inline-block; background: var(--cream); color: var(--text-light); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 6px; margin-bottom: 0.75rem; }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
+        <div class="header-top"><a href="tel:7084421223" data-pc="phone-href">📞 Call Us: <span data-pc="phone-text">(708) 442-1223</span></a></div>
         <div class="header-content">
             <div class="logo-container">
-                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                <a href="index.html"><img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img"></a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
             <nav id="mainNav">
-                <ul>
+                <ul id="navList">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="get-help.html">Get Help</a></li>
-                    <li><a href="get-involved.html">About Us</a></li>
-                    <li><a href="donations.html">Donations</a></li>
-                    <li><a href="about.html">About Us</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -52,9 +81,9 @@
         <div class="box">
             <h2>Volunteer Opportunities</h2>
             <h3>Driver Volunteers</h3>
-            <p>Drive frail elderly to and from appointments as needed. Our drivers are good listeners, too and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed. <strong>PeopleCare does reimburse our volunteers for the cost of fuel.</strong></p>
+            <p>Drive people to and from appointments as needed. Our drivers are good listeners, too and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed. <strong>PeopleCare does reimburse our volunteers for the cost of fuel.</strong></p>
             <h3>Friendly Visitors</h3>
-            <p>Meet with the frail elderly clients in their home or retirement facility as needed so they may talk and reminisce. Being a good listener and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed.</p>
+            <p>Meet with the clients in their home or retirement facility as needed so they may talk and reminisce. Being a good listener and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed.</p>
         </div>
         
         <div class="highlight box">
@@ -66,8 +95,31 @@
         <div class="cta">
             <h2>Ready to About Us?</h2>
             <p>Give us a call or visit our contact page</p>
-            <a href="tel:7084421223" class="phone">(708) 442-1223</a>
+            <a href="tel:7084421223" class="phone" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>
         </div>
+
+        <!-- ============ Below this point, content comes from site-data.js ============
+             To update board members, staff, impact numbers, the running tally,
+             or testimonials, edit site-data.js — not this file. -->
+        <h2 class="section-title">Our Impact</h2>
+        <div class="impact-grid" id="impactGrid"></div>
+
+        <div id="tallySection">
+            <h2 class="section-title">2026 So Far</h2>
+            <div class="tally-box" id="tallyBox"></div>
+        </div>
+
+        <h2 class="section-title">Board of Directors</h2>
+        <p style="text-align:center;color:var(--text-light);max-width:700px;margin:-1rem auto 2rem;">Photos below are placeholder avatars — add a photo file name in site-data.js and we'll use it instead.</p>
+        <div class="people-grid" id="boardGrid"></div>
+
+        <h2 class="section-title">Our Staff</h2>
+        <div class="people-grid" id="staffGrid"></div>
+
+        <h2 class="section-title">What Families Say</h2>
+        <p style="text-align:center;color:var(--text-light);max-width:700px;margin:-1rem auto 2rem;">The quotes below are placeholders — swap in real testimonials in site-data.js once you've collected a few (with permission to use the name/town).</p>
+        <div class="testimonial-grid" id="testimonialGrid"></div>
+        <!-- ============ End site-data.js-driven content ============ -->
     </section>
 
     <footer>
@@ -75,7 +127,7 @@
             <div class="footer-section">
                 <h3>PeopleCare, Inc.</h3>
                 <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
+                <p><a href="tel:7084421223" data-pc="phone-href">Phone: <span data-pc="phone-text">(708) 442-1223</span></a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -93,7 +145,7 @@
             </div>
             <div class="footer-section">
                 <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>.</p>
             </div>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
@@ -112,5 +164,8 @@
             }
         });
     </script>
+    <script src="site-data.js"></script>
+    <script src="site-render.js"></script>
+    <script src="volunteer-modal.js"></script>
 </body>
 </html>

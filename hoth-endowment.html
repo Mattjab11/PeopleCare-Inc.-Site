@@ -4,111 +4,552 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOTH Endowment - PeopleCare, Inc.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="shared-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
     <style>
-        .content { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) 2rem; }
-        .intro { text-align: center; margin-bottom: 3rem; }
-        .intro p { font-size: clamp(1.1rem, 3vw, 1.3rem); color: var(--text-light); }
-        .box { background: var(--white); padding: clamp(2rem, 5vw, 3rem); border-radius: 20px; box-shadow: 0 10px 30px rgba(91, 155, 213, 0.1); margin: 2rem 0; border-left: 5px solid var(--primary); }
-        .box h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 2.5rem); color: var(--primary); margin-bottom: 1.5rem; }
-        .box h3 { font-family: 'Lato', sans-serif; font-size: clamp(1.6rem, 4vw, 2rem); color: var(--primary); margin: 1.5rem 0 1rem; }
-        .box p { color: var(--text-light); line-height: 1.9; font-size: clamp(1rem, 2.5vw, 1.1rem); margin-bottom: 1rem; }
-        .highlight { background: var(--cream); padding: 2rem; border-radius: 15px; margin: 2rem 0; }
-        .cta { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white); padding: clamp(2.5rem, 5vw, 3.5rem) 2rem; text-align: center; border-radius: 20px; margin-top: 3rem; }
-        .cta h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
-        .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
-        .cta .phone:hover { background: var(--white); color: var(--primary); }
+        :root {
+            --primary: #5B9BD5;
+            --primary-dark: #4A7FB8;
+            --accent: #8EC4E8;
+            --light-blue: #B8D9F0;
+            --cream: #F5F9FC;
+            --white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-light: #5A6C7D;
+            --shadow: 0 8px 30px rgba(91, 155, 213, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: "Lato", sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(91, 155, 213, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: .8rem 1rem;
+            text-align: center;
+        }
+
+        .header-top a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(.95rem, 2.5vw, 1.1rem);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            height: clamp(50px, 10vw, 60px);
+            width: auto;
+            max-width: 100%;
+            display: block;
+        }
+
+        .logo-container a { text-decoration: none; }
+
+        .mobile-menu-btn {
+            display: none;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: .8rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: clamp(1rem, 3vw, 2rem);
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: clamp(.85rem, 2vw, .95rem);
+            transition: all .3s ease;
+            position: relative;
+            padding: .5rem 0;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width .3s ease;
+        }
+
+        nav a:hover { color: var(--primary); }
+        nav a:hover::after { width: 100%; }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            text-align: center;
+            padding: clamp(3rem, 7vw, 5rem) 2rem;
+        }
+
+        .page-hero h1 {
+            color: var(--white);
+            font-size: clamp(2.3rem, 6vw, 4rem);
+            margin-bottom: .5rem;
+            line-height: 1.2;
+        }
+
+        .page-hero p {
+            color: var(--white);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            margin: 0;
+        }
+
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: clamp(3rem, 6vw, 5rem) 2rem;
+        }
+
+        .vision {
+            background: var(--cream);
+            border-left: 5px solid var(--primary);
+            border-radius: 15px;
+            padding: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .vision p {
+            margin: 0;
+            font-size: clamp(1.15rem, 3vw, 1.45rem);
+            color: var(--text-dark);
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
+        .box {
+            background: var(--white);
+            padding: clamp(2rem, 5vw, 3rem);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin: 2rem 0;
+            border-left: 5px solid var(--primary);
+        }
+
+        .box h2 {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+
+        .box h3 {
+            font-size: clamp(1.5rem, 4vw, 1.9rem);
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .box h3:first-child { margin-top: 0; }
+
+        p {
+            color: var(--text-light);
+            line-height: 1.9;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin-bottom: 1.2rem;
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text-light);
+        }
+
+        li {
+            margin-bottom: .8rem;
+            padding-left: .3rem;
+            font-size: clamp(1rem, 2.5vw, 1.08rem);
+            line-height: 1.7;
+        }
+
+        .initiative-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .initiative-list li {
+            position: relative;
+            padding-left: 1.7rem;
+        }
+
+        .initiative-list li::before {
+            content: "•";
+            position: absolute;
+            left: .3rem;
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .goals {
+            background: var(--cream);
+            border-left-color: var(--accent);
+        }
+
+        .goal-list {
+            margin-bottom: 1.5rem;
+        }
+
+        .goal-list li strong {
+            color: var(--primary);
+        }
+
+        .planned-giving {
+            background: linear-gradient(135deg, #f8fbfe, var(--cream));
+        }
+
+        .pamphlet-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid var(--primary);
+            transition: all .2s ease;
+        }
+
+        .pamphlet-link:hover {
+            color: var(--primary-dark);
+            border-bottom-color: var(--primary-dark);
+        }
+
+        .signature {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light-blue);
+        }
+
+        .signature p {
+            margin-bottom: .25rem;
+        }
+
+        .signature .name {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.15rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            font-size: .95rem;
+        }
+
+        footer p {
+            color: var(--white);
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--light-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .header-content { padding: 1rem; }
+
+            .mobile-menu-btn { display: block; }
+
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            nav.active { display: block; }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                background: var(--cream);
+                border-radius: 10px;
+                padding: 1rem 0;
+                width: 100%;
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(91, 155, 213, .1);
+            }
+
+            nav li:last-child { border-bottom: none; }
+
+            nav a {
+                display: block;
+                padding: 1rem;
+            }
+
+            .box { padding: 2rem 1.5rem; }
+        }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
+        <div class="header-top">
+            <a href="tel:7084421223">📞 Call Us: <span>(708) 442-1223</span></a>
+        </div>
+
         <div class="header-content">
             <div class="logo-container">
-                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                <a href="index.html">
+                    <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                </a>
             </div>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
+
+            <button class="mobile-menu-btn" type="button" onclick="toggleMenu()" aria-label="Open navigation menu">
+                ☰ Menu
+            </button>
+
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="get-help.html">Get Help</a></li>
-                    <li><a href="get-involved.html">HOTH Endowment</a></li>
-                    <li><a href="donations.html">Donations</a></li>
-                    <li><a href="about.html">About Us</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <img src="PeopleCareImg.png" alt="The Power of an Hour" class="banner-image">
 
-    <section class="page-hero"><h1>HOTH Endowment</h1><p>Hats Off To Helen</p></section>
-    
-    <section class="content">
-        <div class="intro"><p>The Power of your hour…is a great way to give back to your community and help your elderly neighbors!</p></div>
-        
-        <div class="box">
-            <h2>Volunteer Opportunities</h2>
-            <h3>Driver Volunteers</h3>
-            <p>Drive frail elderly to and from appointments as needed. Our drivers are good listeners, too and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed. <strong>PeopleCare does reimburse our volunteers for the cost of fuel.</strong></p>
-            <h3>Friendly Visitors</h3>
-            <p>Meet with the frail elderly clients in their home or retirement facility as needed so they may talk and reminisce. Being a good listener and help identify client's needs or complaints as they are expressed, reporting to staff about the experience as needed.</p>
-        </div>
-        
-        <div class="highlight box">
-            <h2>…and what do I get out of this?</h2>
-            <p>You will be making a significant contribution to your community and society in general. Not only will you feel a sense of discovery and adventure, but you will feel a strong sense satisfaction and value to the people you serve.</p>
-            <p>Many times sharing your life's lessons with others and hearing the wealth of experience filling the minds of those you help gives one a strong sense of well-being. You will also be part of a group of like people with a clear purpose of helping the homebound elderly.</p>
-        </div>
-        
-        <div class="cta">
-            <h2>Ready to HOTH Endowment?</h2>
-            <p>Give us a call or visit our contact page</p>
-            <a href="tel:7084421223" class="phone">(708) 442-1223</a>
-        </div>
-    </section>
+    <main>
+        <img src="PeopleCareImg.png" alt="The Power of an Hour - PeopleCare" class="banner-image">
+
+        <section class="page-hero">
+            <h1>HOTH Endowment</h1>
+            <p>Hats Off To Helen</p>
+        </section>
+
+        <section class="content">
+            <div class="vision">
+                <p>
+                    “<em>No older person in the last third of life will feel abandoned and will be able
+                    to live out their life in the most productive way possible.</em>”
+                    –The PeopleCare Vision statement
+                </p>
+            </div>
+
+            <div class="box">
+                <p>
+                    We all plan for the future. Often we set goals for ourselves, such as advancing our careers,
+                    running a marathon or visiting exotic places. However, the most important plans we make concern
+                    the welfare of others, particularly our families. We thoughtfully consider what the future may
+                    hold and take appropriate action to meet the needs of those who are important to us.
+                </p>
+
+                <p>
+                    As friends and neighbors, sometimes we are called upon to help those who cannot always help
+                    themselves in the same way. To help achieve the mission of helping older adults in our community,
+                    PeopleCare has established an endowment fund to provide a reliable source of income to the
+                    organization and its mission for generations to come.
+                </p>
+
+                <p>
+                    The Hats Off To Helen Endowment Fund (HOTH), named for our Founder Helen Jablonski, has a unique
+                    purpose in the life of our community—to empower the mission and sustain the operating budget of
+                    PeopleCare beyond what is possible through annual operating funds. The Endowment Fund is not simply
+                    a hedge against future uncertainties, but is a commitment to provide future generations of older
+                    adults assistance and support by providing socialization, emotional support and access to service
+                    providers.
+                </p>
+
+                <p>
+                    Furthermore, in the event that PeopleCare, Inc were to dissolve or for any reason cease to maintain
+                    continuity, the HOTH Endowment will continue to support the mission of PeopleCare and, on a grass
+                    roots level, strive to support the vision that is the basis of all PeopleCare services and
+                    initiatives:
+                    “<em>that no older person in the last third of life will feel abandoned and will be able to live
+                    out their life in the most productive way possible.</em>”
+                    This assistance could help support other organizations and/or initiatives affecting the PeopleCare
+                    mission within the older adult community.
+                </p>
+            </div>
+
+            <div class="box">
+                <h2>Older Adult Initiatives</h2>
+
+                <p>
+                    The following values are affirmed as central to our work with older adults:
+                </p>
+
+                <ul>
+                    <li>All individuals will be treated with integrity, sincerity and empathy</li>
+                    <li>All individuals’ privacy, dignity, autonomy and diversity will be respected and honored</li>
+                    <li>
+                        PeopleCare and HOTH are charged with a commitment to direct service, team work, partnership
+                        and connection to the community especially to individuals and family members.
+                    </li>
+                </ul>
+
+                <p>
+                    Currently PeopleCare offers the following services and initiatives throughout the communities of
+                    Brookfield, LaGrange, LaGrange Park, Lyons, North Riverside, Riverside, and Westchester:
+                </p>
+
+                <ul class="initiative-list">
+                    <li>Cooperative Group Grocery Shopping (in partnership with Cantata Adult Life Services)</li>
+                    <li>Friendly Home Visitation</li>
+                    <li>Information and Referral</li>
+                    <li>Volunteer Transportation</li>
+                    <li>Voucher Taxi Program (in partnership with Aging Care Connections)</li>
+                </ul>
+            </div>
+
+            <div class="box goals">
+                <h2>HOTH Endowment Goals</h2>
+
+                <p>
+                    The number one goal of HOTH is to grow the Endowment to a level where the return on investment
+                    could empower and sustain the operating budget of PeopleCare, Inc. beyond yearly income from
+                    services and foundation grants. More than 70% of the current budget has come from foundation
+                    grants, with additional support from service fees and personal donations. This is not a sustainable
+                    solution for the foreseeable future. It will be necessary for us to not only continue partnering
+                    in the community, working with local foundations, and reaching out to the growing numbers of older
+                    adults in need of support, but to create more efficient ways to support the older adult
+                    initiatives. To do that, we must be able to deal from a position of strength—both programmatically
+                    and financially.
+                </p>
+
+                <ul class="goal-list">
+                    <li><strong>2 year goal of $500,000 by fiscal year end 2016</strong></li>
+                    <li><strong>5 Year goal of $1,000,000 by fiscal year end 2019</strong></li>
+                    <li><strong>10 year of $2,000,000 by fiscal year end 2024</strong></li>
+                </ul>
+
+                <p>
+                    At our current budgetary levels, a return on investment of 5% could sustain PeopleCare operations
+                    on yearly basis, indefinitely. It would also allow us to advance initiatives and support further
+                    into our surrounding communities.
+                </p>
+            </div>
+
+            <div class="box planned-giving">
+                <h2>Gifts to the HOTH Endowment for PeopleCare</h2>
+
+                <p>
+                    Gifts to the HOTH Endowment for PeopleCare can be made in two ways: by a direct gift of cash or
+                    check, or by a planned gift. Planned Gifts, though requiring financial and estate planning
+                    assistance, offer a unique opportunity to make a substantial gift to the HOTH Endowment Fund while
+                    providing for one’s family. Some planned gift options provide income for life and reduce the tax
+                    burden on the donors and their heirs.
+                </p>
+
+                <p>
+                    We’ve made available a small pamphlet –
+                    <a
+                        href="https://peoplecareinc.org/wp-content/uploads/2014/11/Thank-You-for-Giving-HOTH-PeopleCare.pdf"
+                        class="pamphlet-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Thank You Remembering PeopleCare"
+                    >Thank You Remembering PeopleCare</a>
+                    – which outlines the most common types of planned giving and their benefits. We ask that you
+                    consider your role in the future of PeopleCare and the continuing service to older adults in the
+                    community. You can make a difference.
+                </p>
+
+                <p>
+                    Please feel free to contact me or any member of the Endowment Committee for additional information,
+                    or to discuss confidentially the best way to make a gift. We are grateful for your generosity and
+                    commitment to ensure the future of the PeopleCare mission.
+                </p>
+
+                <div class="signature">
+                    <p>Sincerely,</p>
+                    <p class="name">Bruce F. Jablonski</p>
+                    <p>Executive Director</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>PeopleCare, Inc.</h3>
-                <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="get-help.html">Get Help</a>
-                <a href="get-involved.html">Volunteer</a>
-                <a href="donations.html">Donate</a>
-                <a href="about.html">About Us</a>
-            </div>
-            <div class="footer-section">
-                <h3>Our Services</h3>
-                <a href="get-help.html">Friendly Visitors</a>
-                <a href="get-help.html">Transportation</a>
-                <a href="get-help.html">Caregiver Support</a>
-                <a href="get-help.html">Information & Referral</a>
-            </div>
-            <div class="footer-section">
-                <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
-            </div>
-        </div>
-        <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
+        <p>
+            &copy; 2026 PeopleCare Inc. · 273 Nuttall Road · Riverside, IL 60546 ·
+            Phone: <a href="tel:7084421223">(708) 442-1223</a>
+        </p>
     </footer>
 
     <script>
         function toggleMenu() {
-            const nav = document.getElementById('mainNav');
-            nav.classList.toggle('active');
+            const nav = document.getElementById("mainNav");
+            nav.classList.toggle("active");
         }
-        document.addEventListener('click', function(event) {
-            const nav = document.getElementById('mainNav');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
+
+        document.addEventListener("click", function (event) {
+            const nav = document.getElementById("mainNav");
+            const menuBtn = document.querySelector(".mobile-menu-btn");
+
             if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
-                nav.classList.remove('active');
+                nav.classList.remove("active");
             }
         });
     </script>

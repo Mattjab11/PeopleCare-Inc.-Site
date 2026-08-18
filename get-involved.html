@@ -19,25 +19,36 @@
         .cta h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
         .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
         .cta .phone:hover { background: var(--white); color: var(--primary); }
+
+        /* --- Added: Upcoming Events (content pulled from site-data.js) --- */
+        .events-list { display: grid; gap: 1.25rem; }
+        .event-card { background: var(--white); border-radius: 15px; padding: 1.5rem 1.75rem; box-shadow: 0 8px 25px rgba(91, 155, 213, 0.1); display: flex; gap: 1.5rem; align-items: center; border-left: 5px solid var(--accent); }
+        .event-date { background: var(--cream); color: var(--primary); border-radius: 12px; padding: 0.75rem 1rem; text-align: center; min-width: 70px; font-weight: 700; line-height: 1.2; }
+        .event-date .month { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .event-date .day { display: block; font-size: 1.5rem; }
+        .event-info h3 { color: var(--text-dark); font-size: 1.1rem; margin: 0 0 0.25rem; font-weight: 700; }
+        .event-info p { color: var(--text-light); font-size: 0.95rem; margin: 0; }
+        .events-note { text-align: center; color: var(--text-light); font-size: 0.9rem; margin-top: 1.5rem; font-style: italic; }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
+        <div class="header-top"><a href="tel:7084421223" data-pc="phone-href">📞 Call Us: <span data-pc="phone-text">(708) 442-1223</span></a></div>
         <div class="header-content">
             <div class="logo-container">
-                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                <a href="index.html"><img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img"></a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
             <nav id="mainNav">
-                <ul>
+                <ul id="navList">
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
                     <li><a href="get-help.html">Get Help</a></li>
                     <li><a href="get-involved.html">Get Involved</a></li>
                     <li><a href="donations.html">Donations</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -66,8 +77,16 @@
         <div class="cta">
             <h2>Ready to Get Involved?</h2>
             <p>Give us a call or visit our contact page</p>
-            <a href="tel:7084421223" class="phone">(708) 442-1223</a>
+            <a href="tel:7084421223" class="phone" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>
         </div>
+
+        <!-- ============ Below this point, content comes from site-data.js ============
+             To add, remove, or change an event, edit the "events" list in
+             site-data.js — not this file. -->
+        <h2 style="text-align:center;color:var(--primary);font-size:clamp(1.8rem,4vw,2.4rem);margin:3rem 0 1.75rem;font-weight:700;">Upcoming Events</h2>
+        <div class="events-list" id="eventsList"></div>
+        <p class="events-note">Sample dates shown above until you update site-data.js — or connect a live Google Calendar here instead if you keep events there.</p>
+        <!-- ============ End site-data.js-driven content ============ -->
     </section>
 
     <footer>
@@ -75,7 +94,7 @@
             <div class="footer-section">
                 <h3>PeopleCare, Inc.</h3>
                 <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
+                <p><a href="tel:7084421223" data-pc="phone-href">Phone: <span data-pc="phone-text">(708) 442-1223</span></a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -93,7 +112,7 @@
             </div>
             <div class="footer-section">
                 <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>.</p>
             </div>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
@@ -112,5 +131,8 @@
             }
         });
     </script>
+    <script src="site-data.js"></script>
+    <script src="site-render.js"></script>
+    <script src="volunteer-modal.js"></script>
 </body>
 </html>

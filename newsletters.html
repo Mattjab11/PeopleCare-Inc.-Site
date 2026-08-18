@@ -341,7 +341,7 @@
 <body>
     <header>
         <div class="header-top">
-            <a href="tel:7084421223">📞 Call Us: (708) 442-1223</a>
+            <a href="tel:7084421223" data-pc="phone-href">📞 Call Us: <span data-pc="phone-text">(708) 442-1223</span></a>
         </div>
         <div class="header-content">
             <div class="logo-container">
@@ -351,7 +351,7 @@
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
             <nav id="mainNav">
-                <ul>
+                <ul id="navList">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
                     <li><a href="get-help.html">Get Help</a></li>
@@ -430,7 +430,7 @@
             <div class="story-card">
                 <h3>One Call</h3>
                 <p>What can one hour mean? To a PeopleCare client it can mean a doctor's appointment on time, a filled prescription, or three hotels on boardwalk. To a PeopleCare volunteer it's seeing the amazing difference their time can make. Every hour is precious. At PeopleCare we think that's the most important lesson of all.</p>
-                <p><strong>To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" style="color: var(--primary);">(708) 442-1223</a>.</strong></p>
+                <p><strong>To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" style="color: var(--primary);" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>.</strong></p>
             </div>
         </div>
 
@@ -469,7 +469,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 PeopleCare Inc. · 273 Nuttall Road · Riverside, IL 60546 · Phone: <a href="tel:7084421223">(708) 442-1223</a></p>
+        <p>&copy; 2026 PeopleCare Inc. · 273 Nuttall Road · Riverside, IL 60546 · Phone: <a href="tel:7084421223" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a></p>
     </footer>
 
     <script>
@@ -496,5 +496,8 @@
             event.target.reset();
         }
     </script>
+    <script src="site-data.js"></script>
+    <script src="site-render.js"></script>
+    <script src="volunteer-modal.js"></script>
 </body>
 </html>

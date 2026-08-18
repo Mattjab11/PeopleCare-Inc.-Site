@@ -19,25 +19,38 @@
         .cta h2 { font-family: 'Lato', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
         .cta .phone { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; color: var(--white); text-decoration: none; background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
         .cta .phone:hover { background: var(--white); color: var(--primary); }
+
+        /* --- Added: Give Now QR/donate section --- */
+        .give-now { background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white); padding: clamp(2.5rem, 6vw, 4rem) 2rem; border-radius: 20px; margin: 0 0 2.5rem; text-align: center; }
+        .give-now h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+        .give-now > p { color: rgba(255,255,255,0.95); max-width: 600px; margin: 0 auto 2rem; font-size: clamp(1rem, 2.5vw, 1.15rem); }
+        .give-wrap { display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: center; }
+        .give-qr { background: var(--white); padding: 1.25rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .give-qr img { display: block; width: 180px; height: 180px; border-radius: 6px; }
+        .give-qr-label { color: var(--primary-dark); font-weight: 700; text-align: center; margin-top: 0.75rem; font-size: 0.95rem; }
+        .give-btn { display: inline-block; background: var(--white); color: var(--primary); font-weight: 700; font-size: 1.15rem; padding: 1.1rem 2.75rem; border-radius: 50px; cursor: pointer; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+        .give-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,0,0,0.25); }
+        .give-note { margin-top: 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.85); max-width: 600px; margin-left: auto; margin-right: auto; }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-top"><a href="tel:7084421223">📞 Call Us: (708) 442-1223</a></div>
+        <div class="header-top"><a href="tel:7084421223" data-pc="phone-href">📞 Call Us: <span data-pc="phone-text">(708) 442-1223</span></a></div>
         <div class="header-content">
             <div class="logo-container">
-                <img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img">
+                <a href="index.html"><img src="PeopleCare Logo.png" alt="PeopleCare Inc." class="logo-img"></a>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰ Menu</button>
             <nav id="mainNav">
-                <ul>
+                <ul id="navList">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="get-help.html">Get Help</a></li>
-                    <li><a href="get-involved.html">Donations</a></li>
-                    <li><a href="donations.html">Donations</a></li>
-                    <li><a href="about.html">About Us</a></li>
                     <li><a href="hoth-endowment.html">HOTH Endowment</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="get-help.html">Get Help</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -48,9 +61,31 @@
     
     <section class="content" style="max-width:900px">
         <p style="font-size:1.2rem;text-align:center;margin-bottom:3rem;color:var(--text-light)">PeopleCare was called on over 2,500 times last year to help the frail elderly and their families.</p>
+
+        <!-- ============ Added: Give Now ============
+             Connects itself automatically once you set donateUrl in
+             site-data.js. Until then it shows a call/mail fallback. -->
+        <div class="give-now">
+            <h2>Give Now</h2>
+            <p>Scan the code with your phone's camera, or tap the button below, to make a donation.</p>
+            <div class="give-wrap">
+                <div class="give-qr">
+                    <img id="giveQrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fmattjab11.github.io%2FPeopleCare-Inc.-Site%2Fdonations.html" alt="QR code to donate to PeopleCare">
+                    <div class="give-qr-label">Scan to Give</div>
+                </div>
+                <button id="donateNowBtn" class="give-btn" type="button">Donate Now</button>
+            </div>
+            <div id="giveNowInfo" style="display:none;background:rgba(255,255,255,0.15);border-radius:14px;padding:1.5rem;margin-top:1.5rem;text-align:left;max-width:480px;margin-left:auto;margin-right:auto;">
+                <p style="margin:0 0 0.75rem;"><strong>Online checkout is coming soon.</strong> In the meantime, here are two ways to give right now:</p>
+                <p style="margin:0 0 0.5rem;">📞 Call us at <a href="tel:7084421223" data-pc="phone-href" style="color:var(--white);font-weight:700;"><span data-pc="phone-text">(708) 442-1223</span></a></p>
+                <p style="margin:0;">✉️ Mail a check to <span data-pc="address-text">273 Nuttall Road, Riverside, IL 60546</span></p>
+            </div>
+            <p class="give-note">Note for PeopleCare staff: once you add a payment link (PayPal, Venmo, Zelle, GiveButter, etc.) as "donateUrl" in site-data.js, this button and QR code will connect straight to it — nothing else to change.</p>
+        </div>
+
         <div style="background:var(--cream);padding:3rem;border-radius:20px;margin:2rem 0"><h2 style="font-family:Dancing Script,cursive;font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem">Our Mission</h2><p style="line-height:1.9">Using primarily volunteers, PeopleCare will assist and support the involuntarily homebound elderly by providing socialization, emotional support and access to service providers, where no one is denied service.</p></div>
         <div style="background:var(--white);padding:3rem;border-radius:20px;box-shadow:0 10px 30px rgba(107,123,163,0.1);margin:2rem 0;border-left:5px solid var(--primary)"><h2 style="font-family:Dancing Script,cursive;font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem">Charitable Giving</h2><p style="line-height:1.9">PeopleCare welcomes monetary and in-kind gifts to help maintain our vision that "no older adult in the last third of life should ever feel abandoned but should be able to live their life in the most productive way possible". All donations are tax deductible according to current IRS regulations regarding 501(c)(3) non-profit organizations.</p></div>
-        <div style="background:var(--white);padding:3rem;border-radius:20px;box-shadow:0 10px 30px rgba(107,123,163,0.1);margin:2rem 0;border-left:5px solid var(--primary)"><h2 style="font-family:Dancing Script,cursive;font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem">Planned Giving</h2><p style="line-height:1.9">You can make a lasting statement and support the work of PeopleCare forever through a contribution. To learn more contact Judy Mantel, Executive Director, at <a href="tel:7084421223" style="color:var(--primary);font-weight:600">708.442.1223</a></p></div>
+        <div style="background:var(--white);padding:3rem;border-radius:20px;box-shadow:0 10px 30px rgba(107,123,163,0.1);margin:2rem 0;border-left:5px solid var(--primary)"><h2 style="font-family:Dancing Script,cursive;font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem">Planned Giving</h2><p style="line-height:1.9">You can make a lasting statement and support the work of PeopleCare forever through a contribution. To learn more contact Judy Mantel, Executive Director, at <a href="tel:7084421223" style="color:var(--primary);font-weight:600" data-pc="phone-href">708.442.1223</a></p></div>
     </section>
 
     <footer>
@@ -58,7 +93,7 @@
             <div class="footer-section">
                 <h3>PeopleCare, Inc.</h3>
                 <p>273 Nuttall Road<br>Riverside, IL 60546</p>
-                <p><a href="tel:7084421223">Phone: (708) 442-1223</a></p>
+                <p><a href="tel:7084421223">Phone: <span data-pc="phone-text">(708) 442-1223</span></a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -76,7 +111,7 @@
             </div>
             <div class="footer-section">
                 <h3>Call to Action</h3>
-                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223">(708) 442-1223</a>.</p>
+                <p>What can one hour mean? To learn more, volunteer or request assistance, please call us at <a href="tel:7084421223" data-pc="phone-href"><span data-pc="phone-text">(708) 442-1223</span></a>.</p>
             </div>
         </div>
         <div class="footer-bottom"><p>&copy; 2026 PeopleCare Inc. All rights reserved.</p></div>
@@ -95,5 +130,18 @@
             }
         });
     </script>
+    <script>
+        document.getElementById('donateNowBtn').addEventListener('click', function() {
+            // If site-data.js has a donateUrl set, site-render.js already
+            // replaced this button's behavior to go straight there. This
+            // fallback only runs when no donateUrl has been set yet.
+            if (this.getAttribute('data-connected') === 'true') return;
+            var info = document.getElementById('giveNowInfo');
+            info.style.display = (info.style.display === 'none') ? 'block' : 'none';
+        });
+    </script>
+    <script src="site-data.js"></script>
+    <script src="site-render.js"></script>
+    <script src="volunteer-modal.js"></script>
 </body>
 </html>
